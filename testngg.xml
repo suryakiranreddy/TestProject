@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+	<!-- <listeners> <listener class-name="Listners.Listner"></listener> </listeners> -->
+	<test name="Test">
+		<classes>
+			<!-- <class name="TestCases.TC001_AndhraBank_OnlineApply_CarLoanProcessTest" />
+			<class name="TestCases.TC002_AndharaBankLinksAndImagesTest" />
+			<class name="TestCases.TC003_AndharaBank_CalculatorTest" />
+			<class name="TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario" /> -->
+			<!--  <class name="AndroidTestcases.WifiConnectionTest" />
+			<class name="AndroidTestcases.DateWidgetsTest" />
+			<class name="AndroidTestcases.AndroidWebTest" /> -->
+			
+			<class name="IOSTestCases.TestCase1" />
+			<class name="IOSTestCases.TestCase2" />
+			<class name="IOSTestCases.Lunch2deskMobileWebTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

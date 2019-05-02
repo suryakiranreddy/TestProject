@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestSuite" parallel="tests"  verbose="5"> 
+
+
+<test name="IOS Test 1" preserve-order="false">
+
+<parameter name="deviceName" value="iPhone X" />
+<parameter name="wda" value="8100" />
+<parameter name="port" value="4725" /> 
+<classes>
+ <class name="IOSTestCases.TestCase1"/>
+</classes>
+</test>
+
+ <test name="IOS Test 2" preserve-order="false">
+
+<parameter name="deviceName" value="iPhone 8 Plus" />
+<parameter name="wda" value="8101" />
+<parameter name="port" value="4726" /> 
+<classes>
+ <class name="IOSTestCases.TestCase1"/>
+</classes>
+</test>
+
+
+</suite>

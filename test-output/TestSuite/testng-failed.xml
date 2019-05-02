@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="5" name="Failed suite [TestSuite]" parallel="tests">
+  <parameter name="wda" value="8101"/>
+  <parameter name="port" value="4726"/>
+  <parameter name="deviceName" value="iPhone 8 Plus"/>
+  <test name="IOS Test 1" preserve-order="false">
+    <parameter name="wda" value="8100"/>
+    <parameter name="port" value="4725"/>
+    <parameter name="deviceName" value="iPhone X"/>
+    <classes>
+      <class name="IOSTestCases.TestCase1"/>
+    </classes>
+  </test> <!-- IOS Test 1 -->
+  <test name="IOS Test 2" preserve-order="false">
+    <parameter name="wda" value="8101"/>
+    <parameter name="port" value="4726"/>
+    <parameter name="deviceName" value="iPhone 8 Plus"/>
+    <classes>
+      <class name="IOSTestCases.TestCase1"/>
+    </classes>
+  </test> <!-- IOS Test 2 -->
+  <test name="IOS Test 2(failed)" parallel="tests">
+    <parameter name="wda" value="8101"/>
+    <parameter name="port" value="4726"/>
+    <parameter name="deviceName" value="iPhone 8 Plus"/>
+    <classes>
+      <class name="IOSTestCases.TestCase1">
+        <methods>
+          <include name="testCase1" invocation-numbers="0"/>
+          <include name="afterMethod"/>
+          <include name="afterMethod"/>
+          <include name="TestEngine"/>
+          <include name="TestEngine"/>
+          <include name="endreport"/>
+          <include name="endreport"/>
+          <include name="beforeMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- IOSTestCases.TestCase1 -->
+    </classes>
+  </test> <!-- IOS Test 2(failed) -->
+  <test name="IOS Test 1(failed)" parallel="tests">
+    <parameter name="wda" value="8100"/>
+    <parameter name="port" value="4725"/>
+    <parameter name="deviceName" value="iPhone X"/>
+    <classes>
+      <class name="IOSTestCases.TestCase1">
+        <methods>
+          <include name="testCase1" invocation-numbers="0"/>
+          <include name="afterMethod"/>
+          <include name="afterMethod"/>
+          <include name="TestEngine"/>
+          <include name="TestEngine"/>
+          <include name="endreport"/>
+          <include name="endreport"/>
+          <include name="beforeMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- IOSTestCases.TestCase1 -->
+    </classes>
+  </test> <!-- IOS Test 1(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->

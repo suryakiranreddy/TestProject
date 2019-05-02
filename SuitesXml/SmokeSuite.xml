@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="smoke" verbose="1" annotations="JDK">
+
+   <parameter name="browser" value="chrome" />
+
+       <test name="Training Calendar">
+
+              <classes>
+                     <class name="KvbTestCases.TC002_kvb_MSME_Loan" />
+                     <class name="KvbTestCases.TC003_Kvb_NegativeSenario_MSME_Loan" />
+
+              </classes>
+
+       </test>
+
+</suite>
+
+ 
