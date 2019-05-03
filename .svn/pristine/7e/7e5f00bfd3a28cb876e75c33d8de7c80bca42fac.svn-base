@@ -1,0 +1,58 @@
+package Pages;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import com.relevantcodes.extentreports.LogStatus;
+
+import TestBase.TestBase;
+
+public class AndharaBankLinksAndImages extends TestBase {
+
+	private static By allLinks = By.tagName("a");
+
+	private static By images = By.tagName("img");
+     
+	List<WebElement> activelinks ;
+	
+	public AndharaBankLinksAndImages(WebDriver driver) {
+		AndharaBankLinksAndImages.driver = driver;
+	}
+
+	public void brokenLinksAndImages() throws MalformedURLException, IOException {
+		try {
+			List<WebElement> activelinks = activeLinksAndImAGES(allLinks, images);
+			log.info("all active links and images count is" + activelinks.size());
+			for (int i = 0; i <=activelinks.size(); i++) {
+				log.info("active link is ----->" + activelinks.get(i).getAttribute("href"));
+				test.log(LogStatus.INFO,"active links are ----->" + activelinks.get(i).getAttribute("href"));
+				//Here if block is skip validation of facebook , twitter, mail
+				if(!activelinks.get(i).getAttribute("href").contains("facebook")
+						&&!activelinks.get(i).getAttribute("href").contains("twitter")
+						&&!activelinks.get(i).getAttribute("href").contains("mailto")){
+					// Here  Casting active link as url
+				HttpURLConnection connection = (HttpURLConnection) new URL(null, activelinks.get(i).getAttribute("href"),new sun.net.www.protocol.https.Handler())
+						.openConnection();
+				connection.connect();
+				String response = connection.getResponseMessage();
+				log.info("response of----->" + activelinks.get(i).getAttribute("href") + "----->" + response);
+				test.log(LogStatus.INFO,
+						"response of----->" + activelinks.get(i).getAttribute("href") + "----->" + response);
+				connection.disconnect();
+			}
+				}
+		} catch (Exception e) {
+			e.printStackTrace();
+			log.info("Can't verify the link and test is failed");
+			test.log(LogStatus.INFO,
+					"Can't verify the link and test is failed");
+
+		}
+	}
+}

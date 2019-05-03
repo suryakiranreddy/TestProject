@@ -1,0 +1,34 @@
+package TestCases;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import Pages.AndharaBankLinksAndImages;
+import TestBase.TestBase;
+
+public class TC002_AndharaBankLinksAndImagesTest extends TestBase {
+
+	AndharaBankLinksAndImages linksAndImagesTest;
+
+	@BeforeClass
+	public void testEngine() throws IOException {
+		linksAndImagesTest = new AndharaBankLinksAndImages(driver);
+		init();
+		log.info(getClass().getName() + "Test is started");
+	}
+
+	@Test
+	public void linksAndImagesTest() throws MalformedURLException, IOException {
+		test.assignCategory("RegressionTest");
+		linksAndImagesTest.brokenLinksAndImages();
+	}
+
+	@AfterClass(alwaysRun = true)
+	public void endreport() {
+		closeBrowser();
+	}
+}

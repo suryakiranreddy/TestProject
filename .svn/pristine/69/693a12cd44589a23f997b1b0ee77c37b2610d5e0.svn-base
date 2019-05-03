@@ -1,0 +1,100 @@
+package Pages;	
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import TestBase.TestBase;
+
+public class Paymate_MakePayament_PayNow extends TestBase {
+
+	private static By makePyamentLink = By.xpath("//a[contains(text(),'Make Payments')]");
+	private static By payNowLink = By.xpath("//a[contains(text(),'Pay Now')]");
+	private static By singlePaymentLink = By.xpath("//div[contains(text(),'Single Payment')]");
+	private static By custmerNameORcompanyNameTextbox = By
+			.xpath("//*[@class='tooltip-container']/following-sibling::input");
+	private static By custmerNameORcompanyNameValues = By.xpath("//select[@id='ddlSearchContact']");
+	private static By amountTextBox = By.id("txtAmount");
+	private static By accountNumberTextbox = By
+			.xpath("//span[contains(text(),'Please Enter Bank Account No')]/preceding-sibling::input");
+	private static By IFSCTextbox = By.id("txtIFSCode");
+	private static By payFromDropDown = By.id("ddlPayFrom_select");
+	private static By payFromDropDownvalues = By.xpath("//ul[@id='ddlPayFrom_select']/li");
+	private static By payThroughDropDown = By.id("ddlPayThrough_select");
+	private static By payThroughDropDownvalues = By.xpath("//ul[@id='ddlPayThrough_select']/li[8]");
+	private static By typeOfPaymentDropDown = By.id("ddlPaymentType_select");
+	private static By typeOfPaymentDropDownvalues = By.xpath("//ul[@id='ddlPaymentType_select']/li");
+	private static By setPriorityDropDown = By.id("ddlPriority_select");
+	private static By setPriorityDropDownvalues = By.xpath("//ul[@id='ddlPriority_select']/li");
+
+	private static By continueButton = By.xpath("//input[@id='btndirectConfirm']");
+	private static By BookedTransection_MakePaymentButton = By.xpath("//*[@value='Make Payment']");
+	private static By BookedTransection_Tab = By.xpath("//div[contains(text(),'Booked Transactions')]");
+
+	private static By BookedTransectioHistroyRow = By
+			.xpath("//*[@id='ContentPlaceHolder1_gvBookedTransactions']/tbody/tr");
+
+	public Paymate_MakePayament_PayNow(WebDriver driver) {
+		Paymate_MakePayament_PayNow.driver = driver;
+	}
+
+	public void beforePaynow() {
+		click(makePyamentLink);
+		actionsclick(payNowLink);
+	}
+
+	public void singlePayment() {
+		try {
+			if (isdispalyed(BookedTransection_MakePaymentButton)) {
+				click(singlePaymentLink);
+			}
+		} catch (Exception e) {
+			System.out.println("inside catch");
+			e.printStackTrace();
+			click(singlePaymentLink);
+			click(singlePaymentLink);
+		}
+	}
+
+	public void payNow(String custmerNameORcompanyName, String amount, String accountNumber, String Ifsccode,
+			String paymentFrom, String paymentType, String setPriority) throws InterruptedException {
+		click(custmerNameORcompanyNameTextbox);
+		selectVisibleText(custmerNameORcompanyNameValues, custmerNameORcompanyName);
+
+		sendkeys(amountTextBox, amount);
+		sendkeys(accountNumberTextbox, accountNumber);
+		sendkeys(IFSCTextbox, Ifsccode);
+		bootStrabDropDownValue(payFromDropDown, payFromDropDownvalues, paymentFrom, "ddlPayFrom_select");
+		Thread.sleep(5000);
+		click(payThroughDropDown);
+		actionsclick(payThroughDropDownvalues);
+		// bootStrabDropDownValue(payThroughDropDown,payThroughDropDownvalues,"Bank
+		// Of India","ddlPayThrough_select");
+		bootStrabDropDownValue(typeOfPaymentDropDown, typeOfPaymentDropDownvalues, paymentType,
+				"ddlPaymentType_select");
+		bootStrabDropDownValue(setPriorityDropDown, setPriorityDropDownvalues, setPriority, "ddlPriority_select");
+		click(continueButton);
+		// Here xpath is stored in variables to pass into methods
+		/*
+		 * String custmerNameRow=
+		 * "//*[@id='ContentPlaceHolder1_gvBookedTransactions']/tbody/tr";
+		 * String custmerNameLocationpart1=
+		 * "//*[@id='ContentPlaceHolder1_gvBookedTransactions']/tbody/tr[";
+		 * String custmerNameLocationpart2="]/td["; String
+		 * custmerNameLocationpart3="2]"; String
+		 * textToBreakLoop=Repository.getProperty(
+		 * "PaymateMakePaymentVerificationText"); String
+		 * ExpectedText=webtableVerification(custmerNameRow,
+		 * custmerNameLocationpart1,custmerNameLocationpart2,
+		 * custmerNameLocationpart3, textToBreakLoop);
+		 */
+		String custmerNameRow = "//*[@id='ContentPlaceHolder1_gvBookedTransactions']/tbody/tr";
+		String custmerNameLocation = "//*[@id='ContentPlaceHolder1_gvBookedTransactions']/tbody/tr[]/td[2]";
+		String ExpectedText = webtableVerificationTest(custmerNameRow, custmerNameLocation,
+				Repository.getProperty("PaymateMakePaymentVerificationText"));
+		System.out.println("ExpectedText is" + ExpectedText);
+		System.out.println("ActualText is" + Repository.getProperty("PaymateBookedTransaction"));
+		Assert.assertTrue(ExpectedText.equalsIgnoreCase(Repository.getProperty("PaymateBookedTransaction")));
+		log.info("Payment is booked and Booked payment details are present underBookedTransaction");
+	}
+}

@@ -1,0 +1,193 @@
+package KvbPages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import TestBase.TestBase;
+
+public class Kvb_TwoWheeler_Insurence_OnlineApply extends TestBase {
+
+	private static By InsurenceLink = By.xpath("//*[@id='insurance']/a/span");
+
+	private static By MotorInsurenceBuyNowLink = By.xpath("//*[@id='buy6']/img");
+
+	private static By acceptButton = By.xpath("//*[@id='lightbox1']/div/table/tbody/tr/td[2]/a/img");
+
+	private static By twoWheelerInsurenceLink = By.xpath("//*[@id='options']/button[2]");
+
+	private static By registrationTextBoxPart1 = By.xpath("//*[@id='regstno1']");
+
+	private static By registrationTextBoxPart2 = By.xpath("//*[@id='regstno2']");
+
+	private static By registrationTextBoxPart3 = By.xpath("//*[@id='regstno3']");
+
+	private static By registrationTextBoxPart4 = By.xpath("//*[@id='regstno4']");
+
+	private static By firstNameTextBox = By.xpath("//*[@id='firstName3']");
+
+	private static By lastNameTextBox = By.xpath("//*[@id='lastName3']");
+
+	private static By mobileNumberTextBox = By.xpath("(//*[@id='divmob3']/input)[1]");
+
+	private static By emailAddressTextBox = By.xpath("//*[@id='emailid3']");
+
+	private static By getQuoteButton = By.xpath("//*[@id='renewother']/form/div/div[10]/button");
+
+	private static By vehicleMakeDropdown = By.id("vehicleMakeCode");
+
+	private static By vehicleModelDropdown = By.id("vehicleModelCode");
+
+	private static By vehicleSubTypeDropdown = By.id("vehicleSubtypeCode");
+
+	private static By engineNumberTextBox = By.id("engineNo");
+
+	private static By chasisNumberTextBox = By.id("chassisNo");
+
+	private static By ccTextBox = By.id("cubicCapacity");
+
+	private static By fuelTypeDropdown = By.id("cmbfuelType");
+
+	private static By ManufacturingYearoption = By.id("btn-yr-no-2012");
+
+	private static By RegistrationDateDropDown = By.id("registrationDate1");
+
+	private static By RegistrationMonthDropDown = By.id("registrationDate2");
+
+	private static By RegistrationYearDropDown = By.id("registrationDate3");
+
+	private static By VehicleRegistrationcityDropDown = By.id("vehicleCity");
+
+	private static By PincodeofyourcurrentresidenceTextBox = By.xpath("(//*[@id='divmailingPincode']/input)[1]");
+
+	private static By proceedButton = By.xpath("//*[@id='collapseOne']/div/form/div[21]/div/button");
+
+	// ***********************************************ExistingPolecyDetails************************************
+
+	private static By ExistingInsurerDropDown = By.xpath("//*[@id='prevInsurerName']");
+
+	private static By ExistingPolicyNumberTextBox = By.xpath("//*[@id='prevPolicyNo']");
+
+	private static By ExistingpolicyexpirydateDropDown = By.xpath("//*[@id='prevPolicyExpiryDate1']");
+
+	private static By ExistingpolicyexpiryMonthDropDown = By.xpath("//*[@id='prevPolicyExpiryDate2']");
+
+	private static By ExistingpolicyexpiryYearDropDown = By.xpath("//*[@id='prevPolicyExpiryDate3']");
+
+	private static By TenureofyourcurrentDropDown = By.xpath("//*[@id='prevpolTenure']");
+
+	private static By NCBonyourcurrentDropDown = By.xpath("//*[@id='txtNcbRate']");
+
+	private static By ExistingPolecyproceedButton = By.xpath("//*[@id='collapseTwo']/div/form/div[4]/div/button[2]");
+	
+	private static By PremiumDetailsproceedButton = By.xpath("(//*[@id='headingFour'])[1]");
+
+	
+	
+
+	public Kvb_TwoWheeler_Insurence_OnlineApply(WebDriver driver) {
+
+		Kvb_TwoWheeler_Insurence_OnlineApply.driver = driver;
+	}
+
+	public  void twoWheeler_Insurence_OnlineApply(String stateCode, String stateCodedigit, String areaCode,
+			String number, String firstName, String lastName, String mobileNumber, String emailAddress,
+			String vehicleMakevisibleText, String vehicleModelvisibleText, String vehicleSubTypevisibleText,
+			String engineNumber, String chasisNumber, String cc, String RegistrationDate, String RegistrationMonth,
+			String RegistrationYear, String VehicleRegistrationcity, String Pincode) {
+		try {
+
+			click(InsurenceLink);
+
+			click(MotorInsurenceBuyNowLink);
+
+			click(acceptButton);
+
+			handlingWindow();
+
+			click(twoWheelerInsurenceLink);
+
+			sendkeys(registrationTextBoxPart1, stateCode);
+
+			sendkeys(registrationTextBoxPart2, stateCodedigit);
+
+			sendkeys(registrationTextBoxPart3, areaCode);
+
+			sendkeys(registrationTextBoxPart4, number);
+
+			sendkeys(firstNameTextBox, firstName);
+
+			sendkeys(lastNameTextBox, lastName);
+
+			sendkeys(mobileNumberTextBox, mobileNumber);
+
+			sendkeys(emailAddressTextBox, emailAddress);
+
+			click(getQuoteButton);
+			
+			expliciteWait(vehicleMakeDropdown,20);
+			
+			selectVisibleText(vehicleMakeDropdown, vehicleMakevisibleText);
+
+			selectVisibleText(vehicleModelDropdown, vehicleModelvisibleText);
+
+			selectVisibleText(vehicleSubTypeDropdown, vehicleSubTypevisibleText);
+
+			sendkeys(engineNumberTextBox, engineNumber);
+
+			sendkeys(chasisNumberTextBox, chasisNumber);
+
+			sendkeys(ccTextBox, cc);
+
+			click(ManufacturingYearoption);
+
+			selectVisibleText(RegistrationDateDropDown, RegistrationDate);
+
+			selectVisibleText(RegistrationMonthDropDown, RegistrationMonth);
+
+			selectVisibleText(RegistrationYearDropDown, RegistrationYear);
+
+			selectVisibleText(VehicleRegistrationcityDropDown, VehicleRegistrationcity);
+
+			sendkeys(PincodeofyourcurrentresidenceTextBox, Pincode);
+
+			click(proceedButton);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void existingPolicy(String existingInsurer, String ExistingPolicyNumber, String Existingpolicyexpirydate,
+			String ExistingpolicyexpiryMonth, String ExistingpolicyexpiryYear, String Tenureofyourcurrent,
+			String NCBonyourcurrent) {
+		try {
+			selectVisibleText(ExistingInsurerDropDown, existingInsurer);
+
+			sendkeys(ExistingPolicyNumberTextBox, ExistingPolicyNumber);
+
+			selectVisibleText(ExistingpolicyexpirydateDropDown, Existingpolicyexpirydate);
+
+			selectVisibleText(ExistingpolicyexpiryMonthDropDown, ExistingpolicyexpiryMonth);
+			
+			
+			selectVisibleText(ExistingpolicyexpiryYearDropDown, ExistingpolicyexpiryYear);
+			
+			handlingAlert();
+
+			selectVisibleText(TenureofyourcurrentDropDown, Tenureofyourcurrent);
+
+			selectVisibleText(ExistingpolicyexpiryYearDropDown, ExistingpolicyexpiryYear);
+
+			selectVisibleText(NCBonyourcurrentDropDown, NCBonyourcurrent);
+			
+			click(ExistingPolecyproceedButton);
+			
+			handlingAlert();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+	}
+}

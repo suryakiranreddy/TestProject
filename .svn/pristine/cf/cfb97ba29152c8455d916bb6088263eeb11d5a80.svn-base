@@ -1,0 +1,58 @@
+package TestCases;
+
+import java.io.IOException;
+
+import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import Common.Screenshot;
+import Common.TestDataProvider;
+import Pages.PYMTE_SignIn;
+import Pages.Paymate_MakePayments_PendingApprovals;
+import TestBase.TestBase;
+
+public class TC_005_MakePayment_PendingApprovals extends TestBase {
+	PYMTE_SignIn sigin;
+	Paymate_MakePayments_PendingApprovals PendingApprovals;
+
+	@DataProvider
+	public Object[][] testData() throws Exception {
+		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("ExcelPath"),
+				Repository.getProperty("PaymatePendingApprovalsTestData"));
+		return data;
+	}
+
+	@BeforeClass
+	public void PendingApprovalsEngine() {
+		sigin = new PYMTE_SignIn(driver);
+		PendingApprovals = new Paymate_MakePayments_PendingApprovals(driver);
+		try {
+			init();
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.info("Unable to locate file");
+		}
+		log.info(getClass().getName() + "---is started");
+	}
+	@Test(dataProvider = "testData")
+	public void PendingApprovalsTest(String username, String password, String custmerid, String runmode) {
+		try {
+			test.assignCategory("RegressionTest");
+			if (runmode.equalsIgnoreCase("N")) {
+				throw new SkipException("Runmode flag set as No");
+			}
+			Screenshot.infoScreenshot(driver, "Paymate_MakePayments_PendingApprovals");
+			sigin.signIn(username, password);
+			PendingApprovals.approvePayment(custmerid);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@AfterClass
+	public void endreport() {
+		closeBrowser();
+	}
+}

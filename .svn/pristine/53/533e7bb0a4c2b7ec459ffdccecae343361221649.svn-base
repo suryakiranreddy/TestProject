@@ -1,0 +1,35 @@
+package KvbPages;
+
+import org.openqa.selenium.By;
+
+import TestBase.TestBase;
+
+public class Kvb_TwoWheeler_Insurence_OnlineApply extends TestBase {
+	
+	private static By InsurenceLink=By.xpath("");
+	
+	private static By MotorInsurenceBuyNowLink=By.xpath("");
+	
+	private static By acceptButton=By.xpath("");
+
+	private static By twoWheelerInsurenceLink=By.xpath("");
+	
+	private static By registrationTextBoxPart1=By.xpath("");
+	
+	private static By registrationTextBoxPart2=By.xpath("");
+	
+	private static By registrationTextBoxPart3=By.xpath("");
+	
+	private static By registrationTextBoxPart4=By.xpath("");
+	
+	private static By firstNameTextBox=By.xpath("");
+	
+	private static By lastNameTextBox=By.xpath("");
+	
+	private static By mobileNumberTextBox=By.xpath("");
+	
+	private static By emailAddressTextBox=By.xpath("");
+	
+	private static By getQuoteButton=By.xpath("");
+	
+}

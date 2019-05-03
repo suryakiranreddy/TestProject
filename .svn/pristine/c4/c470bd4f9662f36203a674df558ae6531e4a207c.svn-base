@@ -1,0 +1,65 @@
+package TestCases;
+
+import java.io.IOException;
+
+import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import Common.Screenshot;
+import Common.TestDataProvider;
+import Pages.AndhraBankL_OnlineApply_CarLoanProcess;
+import Pages.AndhraBankOnlineApplyCarLoanNegativeScenario;
+import TestBase.TestBase;
+
+public class TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario extends TestBase{
+
+
+	AndhraBankOnlineApplyCarLoanNegativeScenario negativeonlineLoanProcess;
+	@DataProvider
+	public Object[][] testData() throws Exception {
+		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("ExcelPath"),Repository.getProperty("AndhraBankEmiNegativeTestData"));
+		return data;
+	}
+	@BeforeClass
+	public void TestEngine() {
+		negativeonlineLoanProcess = new AndhraBankOnlineApplyCarLoanNegativeScenario(driver);
+
+		try {
+			init();
+			log.info(getClass().getName() + "Test is started");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test(dataProvider="testData")
+	public void onlineLoanApplyTest(String schemevisibleText, String statevisibleText, String cityvisibleText,
+			String preferredBranchText,String grossincome, String monthlyExpenses,
+			String requiredLoanAmount, String repaytenor,String runmode) {
+		try {
+			test.assignCategory("RegressionTest");
+			if (runmode.equalsIgnoreCase("N")) {
+				throw new SkipException("Runmode flag set as No");
+			}
+			Screenshot.infoScreenshot(driver, "AndhraBankOnlineApplyCarLoanNegativeScenario");
+			negativeonlineLoanProcess.negativeOnlineApplyCarLoanProcess(schemevisibleText, statevisibleText, cityvisibleText, preferredBranchText, grossincome, monthlyExpenses, requiredLoanAmount, repaytenor);
+			//onlineLoanProcess.onlineApplyCarLoanProcess(schemevisibleText, statevisibleText, cityvisibleText, preferredBranchText, dataOfBirth, grossincome, monthlyExpenses, requiredLoanAmount, repaytenor, text, firstName, village, mandal, citynAME,categoryVisibleText, email, mobileNumber, pannumber);
+			Screenshot.infoScreenshot(driver, "AndhraBankOnlineApplyCarLoanNegativeScenario");
+	
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+	@AfterClass(alwaysRun = true)
+	public void endreport() {
+		closeBrowser();
+	}
+
+	
+	
+	
+
+}

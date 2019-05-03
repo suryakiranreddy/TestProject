@@ -1,0 +1,70 @@
+package PaymateTestcases;
+
+import java.io.IOException;
+import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import Common.Screenshot;
+import Common.TestDataProvider;
+import TestBase.TestBase;
+import paymatePages.Addcontact;
+import paymatePages.PaymateLogin;
+import paymatePages.PaymateLogout;
+
+public class TC_003_AddContact extends TestBase{
+	
+	PaymateLogin paymateLogin;
+	PaymateLogout paymateLogout;
+	Addcontact addcontact;
+	
+	@DataProvider
+	public Object[][] testData() throws Exception {
+		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("PaymateTestDataFilePath"),"Addcontact");
+		return data;
+	}
+	
+	@BeforeClass
+	public void TestEngine() {
+		try {
+			paymateLogin=new PaymateLogin(driver);
+			paymateLogout=new PaymateLogout(driver);
+			addcontact=new Addcontact(driver);
+			init();
+			log.info(getClass().getName() + "Test is started");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test(dataProvider="testData")
+	public void AddContactTest(String uname,String pasword,String emailid, String companynamee,String firstnamee,
+			String lastnamee,String nicknamee,String moblienumm,String refcode,String companyaddres, String bankacnumm,
+			String ifsccodee,String gstinnum,String runmode) {
+		
+		try {
+			test.assignCategory("RegressionTest");
+			if (runmode.equalsIgnoreCase("N")) {
+				throw new SkipException("Runmode flag set as No");
+			}
+			Screenshot.infoScreenshot(driver, "Paymate login page");
+			PaymateLogin.paymateLogin(uname, pasword);
+			Screenshot.infoScreenshot(driver, "Paymate page after login ");			
+			Addcontact.addContact(emailid, companynamee, firstnamee, lastnamee, nicknamee, moblienumm, refcode, companyaddres, 
+					bankacnumm, ifsccodee, gstinnum);
+			Screenshot.infoScreenshot(driver, "screen after adding contacts ");
+			PaymateLogout.paymateLogout();
+			Screenshot.infoScreenshot(driver, "Paymate page after logout ");
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+	
+	
+	@AfterClass(alwaysRun = true)
+	public void endreport() {
+		closeBrowser();
+	}
+}
+

@@ -1,0 +1,75 @@
+browser=chrome
+url =https://www.andhrabank.in
+implicitWait = 120
+explicitWait = 120
+pageLoadTime = 120
+gekoDriverPath = ./src/main/resources/Drivers/geckodriver.exe
+chromedriverpath = ./src/main/resources/Drivers/chromedriver.exe
+IEDriverPath=./src/main/resources/Drivers/IEDriverServer.exe
+ResultBackupPath = D:\Skynews_Output
+ExcelPath=./src/test/resources/TestData/TestData.xlsx
+SheetName=SignUp
+VerificationText=Your company information and profile detail
+Adduser_ActualValue=AddUser
+ActualMessage_Registarion=Your account is now registered
+ActualUserProfileText=surya thiyyagura
+LoginSheetName=SignIn
+ActualaddedContact=vijaya innamuri
+AddContactDataSheet=addContact
+AddContactDataSheet=addContact
+PymteUserNameLabletext=Chandu
+
+
+
+
+
+****************************************VerificationDataInPageFactroy****************************************************************
+PymteUserNameLabletext=Chandu
+PaymateAddContactVerificationText=schneider3
+PaymateMakePaymentVerificationText=schneider3
+PaymateBookedTransaction=schneider3
+PaymateBookedTransectionsVerificationText=schneider3
+
+****************************************TestData*************************************************************************************
+PaymateSigInTestdata=PYMTE_SignIn
+PaymateAddContactTestdata=PYMTE_AddContact
+PaymateMakePaymentTestdata=Paymate_MakePayment
+PaymateBookedTransectionTestData=Paymate_BookedTransections
+PaymatePendingApprovalsTestData=Paymate_PendingApprovals
+PaymatetopUpTestData=Paymate_TopUp
+
+******************************************AndhraBankTestData************************************************************
+AndhraBankOnlineLoanTestData=AndhraBankOnlineLoan
+AndhraBankCalculatorTestData=AndhraBank_Calculator
+AndhraBankEmiNegativeTestData=AndhraBankNagative
+*******************************************AndhraBankVerificationDataInPageFactroy********************************************************
+ExpectedResult=Thank you for your interest in Andhra Bank's Vehicle Loan - Four wheeler.
+ExpectedResultOfEmi=541
+ExpectedResultOfIntrest=820
+ExpectedCarLoanEMICalculation=Please enter Date of Bir
+*******************************************KVBTestData****************************************************************************
+KvbTestDataFilePath=./src/test/resources/TestData/kvb_TestData.xlsx
+TwoWheelerInsurenceTestData=TwoWheelerInsurence
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+package TestCases;
+
+import java.io.IOException;
+
+import org.testng.SkipException;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import Common.Screenshot;
+import Common.TestDataProvider;
+import Pages.PYMTE_SignIn;
+import Pages.Pymte_AddContact;
+import TestBase.TestBase;
+
+public class TC_002_Pymte_AddContactTest extends TestBase {
+
+	Pymte_AddContact addContact;
+	PYMTE_SignIn sigin;
+
+	@DataProvider
+	public Object[][] testData() throws Exception {
+		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("ExcelPath"),
+				Repository.getProperty("PaymateAddContactTestdata"));
+		return data;
+	}
+
+	@BeforeClass
+	public void beforeTest() {
+		try {
+			addContact = new Pymte_AddContact(driver);
+			sigin = new PYMTE_SignIn(driver);
+			init();
+			log.info(getClass().getName() + "Test is started");
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.info("Unable to locate file");
+		}
+	}
+
+	@Test(dataProvider = "testData")
+	public void AddContactTest(String username, String password, String emailAddress, String comapanyName,
+			String firstName, String lastName, String nickName, String mobileNumber, String companyAddress,
+			String runmode) {
+		try {
+			test.assignCategory("RegressionTest");
+			if (runmode.equalsIgnoreCase("N")) {
+				throw new SkipException("Runmode flag set as No");
+			}
+			Screenshot.infoScreenshot(driver, "Pymte_AddContact");
+			sigin.signIn(username, password);
+			addContact.addContactPage(emailAddress, comapanyName, firstName, lastName, nickName, mobileNumber,
+					companyAddress);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

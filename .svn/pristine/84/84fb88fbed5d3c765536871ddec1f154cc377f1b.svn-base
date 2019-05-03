@@ -1,0 +1,134 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import com.relevantcodes.extentreports.LogStatus;
+
+import TestBase.TestBase;
+
+public class AndhraBankOnlineApplyCarLoanNegativeScenario extends TestBase {
+
+
+
+	private static By applyOnlneLink = By.xpath("//a[contains(text(),'Apply Online')]");
+	
+	private static By retailLoans = By.xpath("(//img[@alt='Retail Loans'])[1]");
+	
+	private static By newButton = By.xpath("//*[@id='content']/form/div/div[2]/table/tbody/tr[1]/td[1]/img");
+	
+	private static By frame = By.name("mainFrame");
+	
+	private static By insideframe = By.id("idinlineframe");
+	
+	private static By schemeTypeDropDown = By
+			.xpath("(//form[@name='Form1']/table/tbody/tr[1]/td/table/tbody/tr[2]/td/table/tbody/tr/td[2]/select)[1]");
+	
+	private static By stateDropDown = By.xpath(
+			"//form[@name='Form1']/table/tbody/tr[1]/td/table/tbody/tr[2]/td/table/tbody/tr[7]/td[2]/table/tbody/tr/td/select");
+	
+	private static By cityDropDown = By.xpath(
+			"//form[@name='Form1']/table/tbody/tr[1]/td/table/tbody/tr[2]/td/table/tbody/tr[8]/td[2]/table/tbody/tr/td/select");
+
+	private static By preferredBranchDropDown = By.xpath(
+			"//form[@name='Form1']/table/tbody/tr[1]/td/table/tbody/tr[2]/td/table/tbody/tr[9]/td[2]/table/tbody/tr/td/select");
+
+	private static By dateOfBirthTextbox = By.xpath("//*[@id='txt_dob']");
+
+	private static By grossIncomeMonthlyTextBox = By.xpath("(//input[@id='CURRENCY'])[1]");
+
+	private static By monthlyExpensesTextBox = By.xpath("(//input[@id='CURRENCY'])[2]");
+
+	private static By requiredLoanAmountTextBox = By.xpath("//input[@id='txt_loanamt']");
+
+	private static By repaymentTenorTextBox = By.xpath("//*[@id='txt_TenurePeriod']");
+
+	private static By calculateEmiButton = By.xpath("//*[@id='eligibleAmt']");
+	
+	private static By emiAmount = By.xpath("//*[@id='idtest']/tbody/tr/td/table/tbody/tr[8]/td/table/tbody/tr[2]/td[1]/span");
+
+	private static By firstNamedropdown = By.xpath("//*[@id='id_PersonalDet2']/td/table/tbody/tr[1]/td[2]/select");
+
+	private static By firstNameTextBox = By
+			.xpath("//*[@id='id_PersonalDet2']/td/table/tbody/tr[1]/td[2]/select/following::input[1]");
+
+	private static By address1 = By.xpath("//*[@id='txt_address1']");
+
+	private static By address2 = By.xpath("//*[@id='txt_address2']");
+
+	private static By city = By.xpath("//*[@id='id_searchCoApp']");
+
+	private static By state = By.xpath("//*[@id='txt_appResstate']");
+
+	private static By gender = By.xpath("//*[@id='id_PersonalDet2']/td[1]/table/tbody/tr[8]/td[2]/input");
+
+	private static By category = By.xpath("//*[@id='id_PersonalDet2']/td[2]/table/tbody/tr[4]/td[2]/select");
+
+	private static By pincode = By.xpath("//*[@id='txt_pincode']");
+
+	private static By emailTextBox = By.xpath("//*[@id='txt_email']");
+
+	private static By mobileNumberTextBox = By.xpath("//*[@id='txt_mobno']");
+
+	private static By panNumberTextBox = By.xpath("//*[@id='txt_panno']");
+
+	private static By maritalStatus = By.xpath("//*[@id='radio_maritalstat']");
+
+	private static By submit = By.xpath("//*[@id='apply']");
+
+	private static By actualTextPart1 = By.xpath("//*[@id='dialog-content']/b");
+	
+	private static By actualTextPart2 = By.xpath("//*[@id='id_Inprinciple']/tbody/tr[6]/td/b/br");
+	
+	public AndhraBankOnlineApplyCarLoanNegativeScenario(WebDriver driver) {
+
+		AndhraBankL_OnlineApply_CarLoanProcess.driver = driver;
+	}
+
+	public void negativeOnlineApplyCarLoanProcess(String schemevisibleText, String statevisibleText, String cityvisibleText,
+			String preferredBranchText, String grossincome, String monthlyExpenses,
+			String requiredLoanAmount, String repaytenor) {
+		click(applyOnlneLink);
+		handlingWindow();
+		click(retailLoans);
+		click(newButton);
+		frameHandling(frame, "mainFrame");
+		frameHandling(insideframe, "InlineFrame");
+		try {
+			Thread.sleep(5000);
+			selectVisibleText(schemeTypeDropDown, schemevisibleText);
+			test.log(LogStatus.INFO, "schemeType is selected as ----> "+schemevisibleText);
+			selectVisibleText(stateDropDown, statevisibleText);
+			test.log(LogStatus.INFO, "state is selected as ----> "+statevisibleText);
+			selectVisibleText(stateDropDown, statevisibleText);
+			test.log(LogStatus.INFO, "state is selected as ----> "+statevisibleText);
+			selectVisibleText(cityDropDown, cityvisibleText);
+			test.log(LogStatus.INFO, "city is selected as ----> "+cityvisibleText);
+			selectVisibleText(preferredBranchDropDown, preferredBranchText);
+			test.log(LogStatus.INFO, "preferredBranch is selected as ----> "+preferredBranchText);
+			//sendkeys(dateOfBirthTextbox, dataOfBirth);
+			//test.log(LogStatus.INFO, "preferredBranch is entered as ----> "+dataOfBirth);
+			sendkeys(grossIncomeMonthlyTextBox, grossincome);
+			test.log(LogStatus.INFO, "grossIncomeMonthly is entered as ----> "+grossincome);
+			sendkeys(monthlyExpensesTextBox, monthlyExpenses);
+			test.log(LogStatus.INFO, "monthlyExpenses is entered as ----> "+monthlyExpenses);
+			sendkeys(requiredLoanAmountTextBox, requiredLoanAmount);
+			test.log(LogStatus.INFO, "requiredLoanAmount is entered as ----> "+requiredLoanAmount);
+			sendkeys(repaymentTenorTextBox, repaytenor);
+			test.log(LogStatus.INFO, "requiredLoanAmount is entered as ----> "+requiredLoanAmount);
+			click(calculateEmiButton);
+			String ActualText=getLabelText(actualTextPart1);
+			test.log(LogStatus.INFO, "ActualText is ----> "+ActualText);
+			log.info("Actual label text is ------> "+ActualText);
+			String ExpectedText=Repository.getProperty("ExpectedCarLoanEMICalculation");
+			log.info("Expected label text is ------> "+ExpectedText);
+			Assert.assertTrue(ActualText.equalsIgnoreCase(ExpectedText));
+			test.log(LogStatus.INFO, "ActualText and ExpectedText are not equal");
+			log.info("ActualText and ExpectedText are not equal");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

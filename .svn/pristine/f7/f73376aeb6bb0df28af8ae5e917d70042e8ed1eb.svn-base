@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [TestSuite]" parallel="tests">
+  <parameter name="browser" value="Firefox"/>
+  <test name="FirefoxTest">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="PaymateTestcases.TC_001_PaymateLogin"/>
+      <class name="PaymateTestcases.TC_002_PaymateLogout"/>
+    </classes>
+  </test> <!-- FirefoxTest -->
+  <test name="FirefoxTest(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="PaymateTestcases.TC_001_PaymateLogin">
+        <methods>
+          <include name="PaymateLoginTest"/>
+          <include name="endreport"/>
+          <include name="TestEngine"/>
+        </methods>
+      </class> <!-- PaymateTestcases.TC_001_PaymateLogin -->
+      <class name="PaymateTestcases.TC_002_PaymateLogout">
+        <methods>
+          <include name="endreport"/>
+          <include name="PaymateLogoutTest"/>
+        </methods>
+      </class> <!-- PaymateTestcases.TC_002_PaymateLogout -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->

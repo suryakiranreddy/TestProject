@@ -1,0 +1,37 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import TestBase.TestBase;
+
+public class Paymate_MakePayments_PendingApprovals extends TestBase {
+
+	private static By makePaymentLink = By.xpath("//a[contains(text(),'Make Payments')]");
+	private static By pendingApprovalsLink = By.xpath("//a[contains(text(),'Pending Approvals')]");
+	private static By pendingApprovalsFilter = By
+			.xpath("//*[@id='ContentPlaceHolder1_gvApprovals_length']/label/select");
+	private static By pendingApprovalsDataTable = By.xpath("(//div[@class='row'])[2]/div/table/tbody/tr");
+	private static By approveButton = By.id("ContentPlaceHolder1_btnapproved");
+	private static By popupmakePaymentButton = By.xpath("//input[@value='Make Payment']");
+	private static By logOutmenu = By.xpath("//i[contains(text(),'person')]");
+	private static By logOutbutton = By.xpath("//ul[@class='dropdown-menu']/descendant::div[3]");
+
+	public Paymate_MakePayments_PendingApprovals(WebDriver driver) {
+		Paymate_MakePayments_PendingApprovals.driver = driver;
+	}
+
+	public void approvePayment(String custmerid) {
+
+		click(makePaymentLink);
+		actionsclick(pendingApprovalsLink);
+		selectVisibleText(pendingApprovalsFilter, "All");
+		pendingApprovalsWebTableCheckBox(pendingApprovalsDataTable, custmerid);
+		click(approveButton);
+		click(popupmakePaymentButton);
+		
+		/*click(logOutmenu);
+		actionsclick(logOutbutton);*/
+	}
+
+}

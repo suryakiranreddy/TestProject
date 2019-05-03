@@ -1,0 +1,52 @@
+package TestCases;
+
+import java.io.IOException;
+
+import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import Common.Screenshot;
+import Common.TestDataProvider;
+import Pages.PYMTE_SignIn;
+import TestBase.TestBase;
+
+public class TC001_Pymte_SignInTest extends TestBase {
+	PYMTE_SignIn signIn;
+	
+	@DataProvider
+	public Object[][] testData() throws Exception {
+		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("ExcelPath"),
+				Repository.getProperty("PaymateSigInTestdata"));
+		return data;
+	}
+	@BeforeClass
+	public void beforeMethod() {
+		try {
+			signIn = new PYMTE_SignIn(driver);
+			init();
+			log.info(getClass().getName() + "Test is started");
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.info("Unable to locate file");
+		}
+	}
+	@Test(dataProvider = "testData")
+	public void SignInTest(String UserName, String password, String runTime) {
+		try {
+			test.assignCategory("RegressionTest");
+			if (runTime.equalsIgnoreCase("N")) {
+				throw new SkipException("Runmode flag set as No");
+			}
+			Screenshot.infoScreenshot(driver, "FcSignUp");
+			signIn.signIn(UserName, password);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@AfterClass(alwaysRun = true)
+	public void endreport() {
+		closeBrowser();
+	}
+}

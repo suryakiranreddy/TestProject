@@ -1,0 +1,64 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import TestBase.TestBase;
+
+public class Paymate_MakePayment_BookedTranssections extends TestBase {
+	
+	//*[@id="ContentPlaceHolder1_gvApprovals_length"]/label/select
+	
+	public static Paymate_MakePayament_PayNow bookedTranssections;
+	public static PYMTE_SignIn login;
+	
+	private static By BookedTransection_MakePaymentButton=By.xpath("//*[@value='Make Payment']");
+	private static By BookedTransection_Tab=By.xpath("//div[contains(text(),'Booked Transactions')]");
+	private static By BookedTransectioHistroyRow=By.xpath("//*[@id='ContentPlaceHolder1_gvBookedTransactions']/tbody/tr");
+	
+	//***************************************************************
+	private static By pendingApprovalsFilter=By.xpath("//*[@id='ContentPlaceHolder1_gvApprovals_length']/label/select");
+	private static By pendingApprovalsDataTable=By.xpath("(//div[@class='row'])[2]/div/table/tbody/tr");
+	
+	
+	
+	
+	
+	
+	
+	//*****************************************************************
+	public Paymate_MakePayment_BookedTranssections(WebDriver driver){
+		Paymate_MakePayment_BookedTranssections.driver=driver;
+	}
+	
+	public void BookedTranssectionsMakePayment(String username,String password,String custmerNameToSelect,String custmernameToverify){
+		login=new PYMTE_SignIn(driver);
+		bookedTranssections=new Paymate_MakePayament_PayNow(driver);
+		login.signIn(username, password);
+		bookedTranssections.beforePaynow();
+		try{
+			if(isdispalyed(BookedTransection_MakePaymentButton)){
+				click(BookedTransection_Tab);
+				click(BookedTransection_Tab);
+			}
+			}catch(Exception e){
+				click(BookedTransection_Tab);
+			}
+		WebTableSelectCheckBox(BookedTransectioHistroyRow,custmerNameToSelect);
+		click(BookedTransection_MakePaymentButton);
+		selectVisibleText(pendingApprovalsFilter,"All");
+		String rowsLocater="(//div[@class='row'])[2]/div/table/tbody/tr";
+		String tableTextLocaterPart1="(//div[@class='row'])[2]/div/table/tbody/tr[";
+		String tableTextLocaterPart2="]/td[";
+		String tableTextLocaterPart3="4]";
+		String ActualCustmerName= Repository.getProperty("PaymateBookedTransectionsVerificationText");
+		String ExpectedText=webtableVerification(rowsLocater, tableTextLocaterPart1,tableTextLocaterPart2,tableTextLocaterPart3,
+				custmernameToverify);
+		Assert.assertTrue(ExpectedText.equalsIgnoreCase(ActualCustmerName));
+		log.info("Booked Transection is present under pendingApprovals and Test is passed");
+		}
+	
+	
+
+}

@@ -1,0 +1,77 @@
+package KvbPages;
+
+import org.openqa.selenium.By;
+
+import TestBase.TestBase;
+
+public class Kvb_MSME_Loan extends TestBase {
+	
+	private static By businessLoanLink=By.xpath("/html/body/div[2]/div[2]/form/div[8]/div/div[1]/ul/li/a");
+	
+	private static By applyLoanLink=By.xpath("//h3[text()='Apply Now ']");	
+	//div[text()=' Apply for a Loan ']
+	private static By applyLoantxt=By.xpath("//div[text()=' Apply for a Loan ']");
+	//input[@name='txt_nameofborr']
+	private static By name=By.xpath("//input[@name='txt_nameofborr']");
+	
+	private static By mobileNum=By.xpath("//input[@name='txt_mobno']");
+	//select[@id='sel_constitution']
+	private static By constitution =By.xpath("//select[@id='sel_constitution']");
+	
+	private static By aadharNumber =By.xpath("//input[@name='txt_aadharno']");
+	
+	private static By lineofActivity_present =By.xpath("//input[@name='txt_lnactpresent']");
+	
+	private static By lineofActivity_Proposed  =By.xpath("//input[@name='txt_lnactproposed']");
+	
+	private static By dateOfIncorporation   =By.xpath("//input[@name='txt_dateofincorp']");
+	
+	private static By industryType   =By.xpath("//select[@name='sel_industrytype']");
+	
+	private static By VAT_TIN_Number   =By.xpath("//input[@name='txt_cstno']");
+	
+	private static By PAN_Number   =By.xpath("//input[@name='txt_panno']");
+	
+	private static By emailId   =By.xpath("//input[@name='txt_emailid']");
+	
+	private static By state   =By.xpath("//select[@name='sel_State']");
+	
+	private static By district   =By.xpath("//select[@name='sel_City']");
+	
+	private static By branch   =By.xpath("//select[@name='txt_preferbranch']");
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

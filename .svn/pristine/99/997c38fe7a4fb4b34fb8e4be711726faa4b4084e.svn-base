@@ -1,0 +1,72 @@
+package KvbPages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import TestBase.TestBase;
+
+public class Kvb_TwoWheeler_Insurence_OnlineApply extends TestBase {
+
+	private static By InsurenceLink = By.xpath("//*[@id='insurance']/a/span");
+
+	private static By MotorInsurenceBuyNowLink = By.xpath("//*[@id='buy6']/img");
+
+	private static By acceptButton = By.xpath("//*[@id='lightbox1']/div/table/tbody/tr/td[2]/a/img");
+
+	private static By twoWheelerInsurenceLink = By.xpath("//*[@id='options']/button[2]");
+
+	private static By registrationTextBoxPart1 = By.xpath("//*[@id='regstno1']");
+
+	private static By registrationTextBoxPart2 = By.xpath("//*[@id='regstno2']");
+
+	private static By registrationTextBoxPart3 = By.xpath("//*[@id='regstno3']");
+
+	private static By registrationTextBoxPart4 = By.xpath("//*[@id='regstno4']");
+
+	private static By firstNameTextBox = By.xpath("//*[@id='firstName3']");
+
+	private static By lastNameTextBox = By.xpath("//*[@id='lastName3']");
+
+	private static By mobileNumberTextBox = By.xpath("(//*[@id='divmob3']/input)[1]");
+
+	private static By emailAddressTextBox = By.xpath("//*[@id='emailid3']");
+
+	private static By getQuoteButton = By.xpath("//*[@id='renewother']/form/div/div[10]/button");
+
+	public Kvb_TwoWheeler_Insurence_OnlineApply(WebDriver driver) {
+
+		Kvb_TwoWheeler_Insurence_OnlineApply.driver = driver;
+	}
+
+	public void twoWheeler_Insurence_OnlineApply(String stateCode,String stateCodedigit,String areaCode,String number,String firstName,
+			String lastName,String mobileNumber,String emailAddress) {
+		
+		click(InsurenceLink);
+		
+		click(MotorInsurenceBuyNowLink);
+		
+		click(acceptButton);
+		
+		handlingWindow();
+		
+		click(twoWheelerInsurenceLink);
+
+		sendkeys(registrationTextBoxPart1,stateCode);
+		
+		sendkeys(registrationTextBoxPart2,stateCodedigit);
+		
+		sendkeys(registrationTextBoxPart3,areaCode);
+		
+		sendkeys(registrationTextBoxPart4,number);
+		
+		sendkeys(firstNameTextBox,firstName);
+		
+		sendkeys(lastNameTextBox,lastName);
+		
+		sendkeys(mobileNumberTextBox,mobileNumber);
+		
+		sendkeys(emailAddressTextBox,emailAddress);
+		
+		click(getQuoteButton);
+	}
+}
