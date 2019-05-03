@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+	<!-- <listeners> <listener class-name="Listners.Listner"></listener> </listeners> -->
+	<test name="Test">
+		<classes>
+	 <class name="PaymateTestcases.TC_001_PaymateLogin" />
+			<class name="PaymateTestcases.TC_002_PaymateLogout" />
+			<class name="PaymateTestcases.TC_003_AddContact" />
+			<class name="PaymateTestcases.TC_004_ManageContact" /> 
+			
+			
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

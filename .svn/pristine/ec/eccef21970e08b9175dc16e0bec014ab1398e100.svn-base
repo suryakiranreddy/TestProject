@@ -1,0 +1,29 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import TestBase.TestBase;
+
+public class Paymate_MakePayment_TopUp extends TestBase {
+	
+	private static By TotalAmountLable=By.id("ContentPlaceHolder1_spnTopup");
+	
+	
+	public Paymate_MakePayment_TopUp(WebDriver driver){
+		Paymate_MakePayment_TopUp.driver=driver;
+	}
+	
+	public void transactioDetailsValidation(String actualAmount){
+	double dataProviderAmount=Double.parseDouble(actualAmount);	
+	String text= getLabelText(TotalAmountLable);
+	System.out.println("TotalAmountLable is---"+text);
+	double expectedAmount=Double.parseDouble(text);
+	System.out.println("expectedAmount is---"+expectedAmount);
+	double actaulAmount=netBankingAmountcalculator(dataProviderAmount);
+	System.out.println("actaulAmount is---"+actaulAmount);
+	Assert.assertTrue(actaulAmount==expectedAmount);
+		log.info("amounts are equal and test is passed");
+	}
+}

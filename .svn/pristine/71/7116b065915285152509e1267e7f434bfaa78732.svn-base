@@ -1,0 +1,57 @@
+package TestCases;
+
+import java.io.IOException;
+
+import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import Common.Screenshot;
+import Common.TestDataProvider;
+import Pages.AndhraBankL_OnlineApply_CarLoanProcess;
+import TestBase.TestBase;
+
+public class TC001_AndhraBank_OnlineApply_CarLoanProcessTest extends TestBase {
+
+	AndhraBankL_OnlineApply_CarLoanProcess onlineLoanProcess;
+	@DataProvider
+	public Object[][] testData() throws Exception {
+		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("ExcelPath"),Repository.getProperty("AndhraBankOnlineLoanTestData"));
+		return data;
+	}
+	@BeforeClass
+	public void TestEngine() {
+		onlineLoanProcess = new AndhraBankL_OnlineApply_CarLoanProcess(driver);
+
+		try {
+			init();
+			log.info(getClass().getName() + "Test is started");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test(dataProvider="testData")
+	public void onlineLoanApplyTest(String schemevisibleText, String statevisibleText, String cityvisibleText,
+			String preferredBranchText, String dataOfBirth, String grossincome, String monthlyExpenses,
+			String requiredLoanAmount, String repaytenor, String text, String firstName,String village,String mandal ,String citynAME,String categoryVisibleText, String email, String mobileNumber, String pannumber, String runmode) {
+		try {
+			test.assignCategory("RegressionTest");
+			if (runmode.equalsIgnoreCase("N")) {
+				throw new SkipException("Runmode flag set as No");
+			}
+			Screenshot.infoScreenshot(driver, "AndhraBankL_OnlineApply_CarLoanProcess");
+			onlineLoanProcess.onlineApplyCarLoanProcess(schemevisibleText, statevisibleText, cityvisibleText, preferredBranchText, dataOfBirth, grossincome, monthlyExpenses, requiredLoanAmount, repaytenor, text, firstName, village, mandal, citynAME,categoryVisibleText, email, mobileNumber, pannumber);
+			Screenshot.infoScreenshot(driver, "AndhraBankL_OnlineApply_CarLoanProcess");
+	
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+	@AfterClass(alwaysRun = true)
+	public void endreport() {
+		closeBrowser();
+	}
+}

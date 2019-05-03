@@ -1,0 +1,42 @@
+package Pages;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import TestBase.TestBase;
+
+public class PYMTE_SignIn extends TestBase {
+	public static Logger log = Logger.getLogger(PYMTE_SignIn.class);
+
+	private static By UserNameTextBox = By.xpath("(//div[@id='login']//following::div[5]/input)[1]");
+	private static By PasswordTextBox = By.xpath("(//div[@id='login']//following::div[5]/input)[2]");
+	private static By SubmitButton = By.xpath("//input[@type='submit']");
+	private static By UsernameLable = By.xpath("//div[@class='user-name']/span");
+
+	public PYMTE_SignIn(WebDriver driver) {
+		PYMTE_SignIn.driver = driver;
+	}
+
+	public void signIn(String username, String password) {
+		try {
+			sendkeys(UserNameTextBox, username);
+			sendkeys(PasswordTextBox, password);
+			click(SubmitButton);
+			String ExpectedResult = getLabelText(UsernameLable);
+			log.info("UsernameLableText is" + ExpectedResult);
+			String ActualResult = Repository.getProperty("PymteUserNameLabletext");
+			Assert.assertTrue(ActualResult.equalsIgnoreCase(ExpectedResult));
+			log.info("Username is verified and test is passed");
+		}  catch (NoSuchElementException e) {
+			e.printStackTrace();
+			log.info("Login is failed");
+		}  catch (ElementNotVisibleException e) {
+			e.printStackTrace();
+			log.info("Login is failed");
+		}
+	}
+}

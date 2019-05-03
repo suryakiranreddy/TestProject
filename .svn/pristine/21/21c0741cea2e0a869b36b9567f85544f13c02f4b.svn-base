@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="28006" started-at="2018-06-13T09:50:35Z" finished-at="2018-06-13T09:51:03Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="28006" started-at="2018-06-13T09:50:35Z" finished-at="2018-06-13T09:51:03Z">
+      <class name="KvbTestCases.TC001_Kvb_TwoWheeler_Insurence_OnlineApplyTest">
+        <test-method status="PASS" signature="TestEngine()[pri:0, instance:KvbTestCases.TC001_Kvb_TwoWheeler_Insurence_OnlineApplyTest@4abdb505]" name="TestEngine" is-config="true" duration-ms="9284" started-at="2018-06-13T15:20:35Z" finished-at="2018-06-13T15:20:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestEngine -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:KvbTestCases.TC001_Kvb_TwoWheeler_Insurence_OnlineApplyTest@4abdb505]" name="beforeMethod" is-config="true" duration-ms="28" started-at="2018-06-13T15:20:46Z" finished-at="2018-06-13T15:20:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void KvbTestCases.TC001_Kvb_TwoWheeler_Insurence_OnlineApplyTest.TwoWheeler_Insurence_OnlineApplyTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TwoWheeler_Insurence_OnlineApplyTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:KvbTestCases.TC001_Kvb_TwoWheeler_Insurence_OnlineApplyTest@4abdb505]" name="TwoWheeler_Insurence_OnlineApplyTest" duration-ms="16823" started-at="2018-06-13T15:20:46Z" data-provider="testData" finished-at="2018-06-13T15:21:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TS]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[07]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[FA]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[5516]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[rakesh]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[adusumalli]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[9182037394]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[sandeep@gmail.com]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[BAJAJ]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[AVENGER 150]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[STREET]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[PDZCGC33187]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[MD2A85CZ0GCC15341]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[150]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[02]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[2013]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[HYDERABAD]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[500072.0]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Icici Lombard General Insurance Co. Ltd.]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[4534565756756867867]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[01]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[01]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[2014]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[One year]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[20%]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[y]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TwoWheeler_Insurence_OnlineApplyTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:KvbTestCases.TC001_Kvb_TwoWheeler_Insurence_OnlineApplyTest@4abdb505]" name="afterMethod" is-config="true" duration-ms="19" started-at="2018-06-13T15:21:03Z" finished-at="2018-06-13T15:21:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=TwoWheeler_Insurence_OnlineApplyTest status=SUCCESS method=TC001_Kvb_TwoWheeler_Insurence_OnlineApplyTest.TwoWheeler_Insurence_OnlineApplyTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:KvbTestCases.TC001_Kvb_TwoWheeler_Insurence_OnlineApplyTest@4abdb505] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- KvbTestCases.TC001_Kvb_TwoWheeler_Insurence_OnlineApplyTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

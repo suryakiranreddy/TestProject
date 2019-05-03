@@ -1,0 +1,61 @@
+package TestCases;
+
+import java.io.IOException;
+
+import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import Common.Screenshot;
+import Common.TestDataProvider;
+import Pages.PYMTE_SignIn;
+import Pages.Paymate_MakePayament_PayNow;
+import TestBase.TestBase;
+
+public class TC_003Paymate_MakePayament_PayNowTest extends TestBase {
+
+	public static Paymate_MakePayament_PayNow makePayament;
+	public static PYMTE_SignIn sigin;
+
+	@DataProvider
+	public Object[][] testData() throws Exception {
+		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("ExcelPath"),Repository.getProperty("PaymateMakePaymentTestdata"));
+		return data;
+	}
+	@BeforeClass
+	public void beforetest() {
+		makePayament = new Paymate_MakePayament_PayNow(driver);
+		sigin = new PYMTE_SignIn(driver);
+		try {
+			init();
+			log.info(getClass().getName() + "Test is started");
+		} catch (IOException e) {
+			e.printStackTrace();
+			log.info("Unable to locate file");
+		}
+	}
+	@Test(dataProvider = "testData")	
+	public void payNowTest(String username, String password, String custmerNameORcompanyName, String amount,
+			String accountNumber, String Ifsccode,String paymentFrom,String paymentType,String setPriority,String runmode) {
+		try {
+			test.assignCategory("RegressionTest");
+			if (runmode.equalsIgnoreCase("N")) {
+				throw new SkipException("Runmode flag set as No");
+			}
+			Screenshot.infoScreenshot(driver, "Paymate_MakePayament_PayNow");
+			sigin.signIn(username, password);
+			makePayament.beforePaynow();
+			makePayament.singlePayment();
+			makePayament.payNow(custmerNameORcompanyName, amount, accountNumber, Ifsccode, paymentFrom,paymentType, setPriority);
+			
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+	@AfterClass(alwaysRun = true)
+	public void endreport() {
+		//closeBrowser();
+	}
+}

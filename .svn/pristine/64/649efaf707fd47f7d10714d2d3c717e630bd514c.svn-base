@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Regression]">
+  <parameter name="browser" value="chrome"/>
+  <test name="Training Calendar">
+    <classes>
+      <class name="KvbTestCases.TC002_kvb_MSME_Loan"/>
+      <class name="KvbTestCases.TC003_Kvb_NegativeSenario_MSME_Loan"/>
+    </classes>
+  </test> <!-- Training Calendar -->
+  <test name="Training Calendar(failed)">
+    <classes>
+      <class name="KvbTestCases.TC003_Kvb_NegativeSenario_MSME_Loan">
+        <methods>
+          <include name="Kvb_NegativeSenario_MSME_Loan" invocation-numbers="0"/>
+          <include name="TestEngine"/>
+          <include name="beforeMethod"/>
+          <include name="endreport"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- KvbTestCases.TC003_Kvb_NegativeSenario_MSME_Loan -->
+      <class name="KvbTestCases.TC002_kvb_MSME_Loan">
+        <methods>
+          <include name="TestEngine"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="endreport"/>
+        </methods>
+      </class> <!-- KvbTestCases.TC002_kvb_MSME_Loan -->
+    </classes>
+  </test> <!-- Training Calendar(failed) -->
+</suite> <!-- Failed suite [Regression] -->

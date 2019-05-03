@@ -1,0 +1,68 @@
+package Pages;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import TestBase.TestBase;
+
+public class Pymte_AddContact extends TestBase {
+	
+	public static String xpath;
+	public static String ActualText;
+	Logger log=Logger.getLogger(Pymte_AddContact.class);
+	private static By contactsLink=By.xpath("//a[contains(text(),'Contacts')]");
+	private static By addContactsLink=By.xpath("//a[contains(text(),'Add Contacts')]");
+	private static By emailAddressTextBox=By.id("ContentPlaceHolder1_txtEmail");
+	private static By comapanyNametextbox=By.id("ContentPlaceHolder1_txtCompanyName");
+	private static By firstNameTextBox=By.id("ContentPlaceHolder1_txtFirstName");
+	private static By lastNameTextBox=By.id("ContentPlaceHolder1_txtLastName");
+	private static By nickNameTextBox=By.id("ContentPlaceHolder1_txtNickName");
+	private static By mobileNumberTextBox=By.id("ContentPlaceHolder1_txtMobileNo");
+	private static By referencecodeTextBox=By.id("ContentPlaceHolder1_txtReferenceCode");
+	private static By comapanyAddressTextBox=By.id("ContentPlaceHolder1_txtCompanyAddress");
+	private static By bankAccountTextBox=By.id("ContentPlaceHolder1_txtBankAccountNo");
+	private static By ifscCodeTextBox=By.id("ContentPlaceHolder1_txtIFSCode");
+	private static By gstinTextBox=By.id("ContentPlaceHolder1_txtGSTIN");
+	private static By savaButton=By.id("ContentPlaceHolder1_btnSave");
+	private static By filter=By.xpath("//*[@id='ContentPlaceHolder1_gvContacts_length']/label/select");
+	
+	
+	public Pymte_AddContact(WebDriver driver){
+		Pymte_AddContact.driver=driver;
+	}
+	public void addContactPage(String emailAddress ,String comapanyName,String firstName,String lastName,String nickName,
+			String mobileNumber,String companyAddress){
+		try{
+		click(contactsLink);
+		actionsclick(addContactsLink);
+		sendkeys(emailAddressTextBox,emailAddress);
+		sendkeys(comapanyNametextbox,comapanyName);
+		sendkeys(firstNameTextBox,firstName);
+		sendkeys(lastNameTextBox,lastName);
+		sendkeys(nickNameTextBox,nickName);
+		sendkeys(mobileNumberTextBox,mobileNumber);
+		//sendkeys(referencecodeTextBox,referenceNumber);
+		sendkeys(comapanyAddressTextBox,companyAddress);
+		/*sendkeys(bankAccountTextBox,bankAccountnumber);
+		sendkeys(ifscCodeTextBox,ifscCode);
+		sendkeys(gstinTextBox,gstin);*/
+		click(savaButton);
+		selectVisibleText(filter,"All");
+		xpath="//*[@id='ContentPlaceHolder1_gvContacts']/tbody/tr";
+		String Xpath1="//*[@id='ContentPlaceHolder1_gvContacts']/tbody/tr[";
+		String Xpath2="]/td[";
+		String Xpath3="2]";
+		ActualText=Repository.getProperty("PaymateAddContactVerificationText");
+		log.info("file text is"+ActualText);
+		String ExpectedText=webtableVerification(xpath,Xpath1,Xpath2,Xpath3,ActualText);
+		log.info("table text is"+ExpectedText);
+	    Assert.assertTrue(ActualText.equalsIgnoreCase(ExpectedText));
+	    log.info("Added user is verified and Added user is present under manage contacts");
+		}catch(NoSuchElementException e){
+			e.printStackTrace();
+		}
+	}
+}

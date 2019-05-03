@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="77501" started-at="2018-06-13T03:09:21Z" finished-at="2018-06-13T03:10:39Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="77501" started-at="2018-06-13T03:09:21Z" finished-at="2018-06-13T03:10:39Z">
+      <class name="TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario">
+        <test-method status="PASS" signature="TestEngine()[pri:0, instance:TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario@7ce6a65d]" name="TestEngine" is-config="true" duration-ms="38375" started-at="2018-06-13T08:39:21Z" finished-at="2018-06-13T08:40:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestEngine -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario@7ce6a65d]" name="beforeMethod" is-config="true" duration-ms="21" started-at="2018-06-13T08:40:03Z" finished-at="2018-06-13T08:40:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario.onlineLoanApplyTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="onlineLoanApplyTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario@7ce6a65d]" name="onlineLoanApplyTest" duration-ms="33137" started-at="2018-06-13T08:40:03Z" data-provider="testData" finished-at="2018-06-13T08:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Vehicle Loan - Four wheeler]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ANDHRA PRADESH]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ADDANKI]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ADDANKI]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[50000]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[10000]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[500000]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[84]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[y]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at Pages.AndhraBankOnlineApplyCarLoanNegativeScenario.negativeOnlineApplyCarLoanProcess(AndhraBankOnlineApplyCarLoanNegativeScenario.java:126)
+	at TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario.onlineLoanApplyTest(TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onlineLoanApplyTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario@7ce6a65d]" name="afterMethod" is-config="true" duration-ms="307" started-at="2018-06-13T08:40:37Z" finished-at="2018-06-13T08:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=onlineLoanApplyTest status=FAILURE method=TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario.onlineLoanApplyTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario@7ce6a65d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="endreport()[pri:0, instance:TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario@7ce6a65d]" name="endreport" is-config="true" duration-ms="1967" started-at="2018-06-13T08:40:37Z" finished-at="2018-06-13T08:40:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endreport -->
+      </class> <!-- TestCases.TC004_AndhraBank_AndhraBankOnlineApplyCarLoanNegativeScenario -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,44 @@
+package TestCases;
+
+import java.io.IOException;
+
+import org.testng.SkipException;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import Common.TestDataProvider;
+import Pages.Paymate_MakePayment_BookedTranssections;
+import TestBase.TestBase;
+
+public class TC004_Payment_MakePayment_BookedTransections extends TestBase {
+	Paymate_MakePayment_BookedTranssections BookedTranssections;
+	@DataProvider
+	public Object[][] testData() throws Exception {
+		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("ExcelPath"),Repository.getProperty("PaymateBookedTransectionTestData"));
+		return data;
+	}
+	@BeforeClass
+	public void beforeBookedTransection(){
+		BookedTranssections=new Paymate_MakePayment_BookedTranssections(driver); 
+		try {
+			init();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		log.info(getClass().getName() + "Test is started");
+	}
+	@Test(dataProvider="testData")
+	public void BookedTranssectionsTest(String username,String password,String custmerNameToSelect,String custmernameToverify,String runmode){
+		test.assignCategory("RegressionTest");
+		if(runmode.equalsIgnoreCase("n")){
+			throw new SkipException("Runmode flag set as No");
+		}
+		BookedTranssections.BookedTranssectionsMakePayment(username, password, custmerNameToSelect,custmernameToverify);
+	}
+	@AfterClass(alwaysRun=true)
+	public void endreport() {
+		//closeBrowser();
+	}
+}

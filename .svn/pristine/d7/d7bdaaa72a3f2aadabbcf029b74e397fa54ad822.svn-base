@@ -1,0 +1,68 @@
+package Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import com.relevantcodes.extentreports.LogStatus;
+
+import TestBase.TestBase;
+
+public class AndharaBank_Calculator extends TestBase{
+	
+	
+	//========================Emicalcutorpage==================//
+	private static By calculatorlink=By.xpath("//*[@id='andform']/div[11]/div/div/div/div/div/ul/li[3]/a");
+	private static By emicalculatorlink=By.xpath("(//*[@id='acc_nonunderline'])[2]");
+
+	private static By installmentno= By.id("payments");
+	private static By principal = By.id("principal");
+	private static By interest= By.id("interest");
+	private static By btncalculate= By.id("Button2");
+		
+	public AndharaBank_Calculator(WebDriver driver)
+	{
+		AndharaBank_Calculator.driver=driver;
+	}
+	
+	public void emicalculation(String installment, String Principal, String Interest) throws Exception
+		{
+		
+		//waitForClickable(installmentno);
+		Thread.sleep(1000);
+		try{
+		click(calculatorlink);
+		click(emicalculatorlink);
+		sendkeys(installmentno, installment);
+		test.log(LogStatus.INFO, "installmentno is entered as ----> "+installment);
+		sendkeys(principal, Principal);
+		test.log(LogStatus.INFO, "principal is entered as ----> "+Principal);
+		sendkeys(interest, Interest);
+		test.log(LogStatus.INFO, "interest is entered as ----> "+Interest);
+		click(btncalculate);
+		
+		WebElement elm = getdriver().findElement(By.xpath("//*[@id='payment']"));
+		String actualResultOfEmi = elm.getAttribute("value");
+		double actualResultOfEmi1=Double.parseDouble(actualResultOfEmi);
+		test.log(LogStatus.INFO, "actualResultOfEmi AND ExpectedEmi---> "+actualResultOfEmi1);
+		String ExpectedEmi=Repository.getProperty("ExpectedResultOfEmi");
+		double ExpectedEmi1=Double.parseDouble(ExpectedEmi);
+		test.log(LogStatus.INFO, "actualResultOfEmi AND ExpectedEmi---> "+ExpectedEmi1);
+        Assert.assertTrue(actualResultOfEmi1==ExpectedEmi1);
+        test.log(LogStatus.INFO, "actualResultOfEmi AND ExpectedEmi are equal ");
+		WebElement elm1 = getdriver().findElement(By.xpath("//*[@id='totint']"));
+		String actualResultOfTotalIntrest = elm1.getAttribute("value");
+		double actualResultOfTotalIntrest1=Double.parseDouble(actualResultOfTotalIntrest);
+		test.log(LogStatus.INFO, "actualResultOfEmi AND ExpectedEmi---> "+actualResultOfTotalIntrest1);
+		String ExpectedTotalIntrest =Repository.getProperty("ExpectedResultOfIntrest");
+		double ExpectedTotalIntrest1=Double.parseDouble(ExpectedTotalIntrest);
+		test.log(LogStatus.INFO, "actualResultOfEmi AND ExpectedEmi---> "+ExpectedTotalIntrest1);
+		Assert.assertTrue(actualResultOfTotalIntrest1==ExpectedTotalIntrest1);
+        test.log(LogStatus.INFO, "actualResultOfTotalIntrest1 AND ExpectedTotalIntrest1 are equal ");
+		}catch(Exception e){
+			e.printStackTrace();
+			
+		}
+	}
+}
