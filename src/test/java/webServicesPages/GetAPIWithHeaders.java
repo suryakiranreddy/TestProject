@@ -10,7 +10,8 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class GetAPIWithHeaders extends TestBase {
 
-	public static void getAPITestWithHeaders(String apiURL, String StatusCode, String PerPageValue, String TotalValue, String LastName, String Id,
+	public static void getAPITestWithHeaders(String apiURL, String StatusCode, String PerPageValue, 
+			String TotalValue, String LastName, String Id,
 			String Avatar, String FirstName) throws ClientProtocolException, IOException {
 
 		
@@ -119,5 +120,32 @@ public class GetAPIWithHeaders extends TestBase {
 
 		getAllHeaders();
 
+		/*
+		 * {
+ 	"per_page": 3,
+ 	"total": 12,
+ 	"data": [{
+ 		"last_name": "Bluth",
+ 		"id": 1,
+ 		"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg",
+ 		"first_name": "George",
+ 		"email": "george.bluth@reqres.in"
+ 	}, {
+ 		"last_name": "Weaver",
+ 		"id": 2,
+ 		"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg",
+ 		"first_name": "Janet",
+ 		"email": "janet.weaver@reqres.in"
+ 	}, {
+ 		"last_name": "Wong",
+ 		"id": 3,
+ 		"avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg",
+ 		"first_name": "Emma",
+ 		"email": "emma.wong@reqres.in"
+ 	}],
+ 	"page": 1,
+ 	"total_pages": 4
+ }
+ */
 	}
 }

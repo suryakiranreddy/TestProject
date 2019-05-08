@@ -8,18 +8,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import Common.DataProviderClass;
 import Common.TestDataProvider;
 import TestBase.TestBase;
 import webServicesPages.GetAPIWithHeaders;
 
 public class GetAPIWithHeadersTest extends TestBase {
-
-
-	@DataProvider
-	public Object[][] testData() throws Exception {
-		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("excelSheetPath"), "getApi");
-		return data;
-	}
 
 	@BeforeClass
 	public void setUp() throws IOException {
@@ -28,12 +22,12 @@ public class GetAPIWithHeadersTest extends TestBase {
 
 	}
 
-	@Test(dataProvider = "testData")
-	public void getAPIWithoutHeadersTest(String apiURL, String StatusCode, String PerPageValue, String TotalValue, String LastName, String Id,
-			String Avatar, String FirstName) throws ClientProtocolException, IOException {
-		
-		
-		GetAPIWithHeaders.getAPITestWithHeaders(apiURL, StatusCode, PerPageValue, TotalValue, LastName, Id, Avatar, FirstName);
+	@Test(dataProvider = "getAPIData", dataProviderClass = DataProviderClass.class)
+	public void getAPIWithoutHeadersTest(String apiURL, String StatusCode, String PerPageValue, String TotalValue,
+			String LastName, String Id, String Avatar, String FirstName) throws ClientProtocolException, IOException {
+
+		GetAPIWithHeaders.getAPITestWithHeaders(apiURL, StatusCode, PerPageValue, TotalValue, LastName, Id, Avatar,
+				FirstName);
 
 	}
 
