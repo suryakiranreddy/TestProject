@@ -37,7 +37,7 @@ public class GetAPIWithoutHeadersTest extends TestBase {
 
 	@AfterClass(alwaysRun = true)
 	public void endreport() {
-		closeReport();
+		//closeReport();
 	}
 
 }

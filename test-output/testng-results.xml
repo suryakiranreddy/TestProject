@@ -2,27 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3599" started-at="2019-05-09T12:53:47Z" finished-at="2019-05-09T12:53:50Z">
+  <suite name="Suite" duration-ms="2402" started-at="2019-05-16T08:14:59Z" finished-at="2019-05-16T08:15:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3599" started-at="2019-05-09T12:53:47Z" finished-at="2019-05-09T12:53:50Z">
+    <test name="Test" duration-ms="2402" started-at="2019-05-16T08:14:59Z" finished-at="2019-05-16T08:15:02Z">
       <class name="webServicesTest.GetAPIWithHeadersTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:webServicesTest.GetAPIWithHeadersTest@7364985f]" name="setUp" is-config="true" duration-ms="69" started-at="2019-05-09T18:23:47Z" finished-at="2019-05-09T18:23:47Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:webServicesTest.GetAPIWithHeadersTest@7364985f]" name="setUp" is-config="true" duration-ms="57" started-at="2019-05-16T13:44:59Z" finished-at="2019-05-16T13:44:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:webServicesTest.GetAPIWithHeadersTest@7364985f]" name="beforeMethod" is-config="true" duration-ms="5" started-at="2019-05-09T18:23:48Z" finished-at="2019-05-09T18:23:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void webServicesTest.GetAPIWithHeadersTest.getAPIWithoutHeadersTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws org.apache.http.client.ClientProtocolException,java.io.IOException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="getAPIWithoutHeadersTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:webServicesTest.GetAPIWithHeadersTest@7364985f]" name="getAPIWithoutHeadersTest" duration-ms="2299" started-at="2019-05-09T18:23:48Z" description="Invalid Login Scenario with empty username and password." data-provider="getAPIData" finished-at="2019-05-09T18:23:50Z">
+        <test-method status="PASS" signature="getAPIWithoutHeadersTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:webServicesTest.GetAPIWithHeadersTest@7364985f]" name="getAPIWithoutHeadersTest" duration-ms="1574" started-at="2019-05-16T13:45:00Z" description="Invalid Login Scenario with empty username and password." data-provider="getAPIData" finished-at="2019-05-16T13:45:02Z">
           <params>
             <param index="0">
               <value>
@@ -68,22 +57,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getAPIWithoutHeadersTest -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:webServicesTest.GetAPIWithHeadersTest@7364985f]" name="afterMethod" is-config="true" duration-ms="2" started-at="2019-05-09T18:23:50Z" finished-at="2019-05-09T18:23:50Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=getAPIWithoutHeadersTest status=SUCCESS method=GetAPIWithHeadersTest.getAPIWithoutHeadersTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:webServicesTest.GetAPIWithHeadersTest@7364985f] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="endreport()[pri:0, instance:webServicesTest.GetAPIWithHeadersTest@7364985f]" name="endreport" is-config="true" duration-ms="368" started-at="2019-05-09T18:23:50Z" finished-at="2019-05-09T18:23:50Z">
+        <test-method status="PASS" signature="endreport()[pri:0, instance:webServicesTest.GetAPIWithHeadersTest@7364985f]" name="endreport" is-config="true" duration-ms="5" started-at="2019-05-16T13:45:02Z" finished-at="2019-05-16T13:45:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endreport -->
       </class> <!-- webServicesTest.GetAPIWithHeadersTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

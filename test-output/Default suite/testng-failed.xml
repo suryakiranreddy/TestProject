@@ -6,4 +6,15 @@
       <class name="webServicesTest.GetAPIWithHeadersTest"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="webServicesTest.GetAPIWithHeadersTest">
+        <methods>
+          <include name="getAPIWithoutHeadersTest" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="endreport"/>
+        </methods>
+      </class> <!-- webServicesTest.GetAPIWithHeadersTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

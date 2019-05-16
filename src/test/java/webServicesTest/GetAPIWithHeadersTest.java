@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import Common.DataProviderClass;
 import Common.TestDataProvider;
+import Common.TestListner;
 import TestBase.TestBase;
 import webServicesPages.GetAPIWithHeaders;
 
@@ -36,6 +37,6 @@ public class GetAPIWithHeadersTest extends TestBase {
 
 	@AfterClass(alwaysRun = true)
 	public void endreport() {
-		closeReport();
+		//closeReport();
 	}
 }

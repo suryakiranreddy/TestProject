@@ -100,7 +100,7 @@ public class TestBase {
 	public String startTime;
 	public static int indexSI = 1;
 	public static ExtentReports extent;
-	public static ExtentTest test;
+	public static ExtentTest test1;
 	public static Actions action;
 	
 	public static Logger log = Logger.getLogger(TestBase.class);
@@ -320,22 +320,22 @@ public class TestBase {
 	public void getresult(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.SUCCESS) {
 			updateResult(indexSI++, getClass().getName(), "Pass", "Test1");
-			test.log(LogStatus.PASS, result.getName() + " test is pass");
+			test1.log(LogStatus.PASS, result.getName() + " test is pass");
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			updateResult(indexSI++, getClass().getName(), "Skip", "Test1");
-			test.log(LogStatus.SKIP, result.getName() + " test is skipped and skip reason is:-" + result.getThrowable());
+			test1.log(LogStatus.SKIP, result.getName() + " test is skipped and skip reason is:-" + result.getThrowable());
 		} else if (result.getStatus() == ITestResult.FAILURE) {
 			updateResult(indexSI++, getClass().getName(), "Fail", "Test1");
-			test.log(LogStatus.ERROR, result.getName() + " test is failed" + result.getThrowable());
+			test1.log(LogStatus.ERROR, result.getName() + " test is failed" + result.getThrowable());
 			String screen = Screenshot.capture(driver, getClass().getName());
-			test.log(LogStatus.FAIL, test.addBase64ScreenShot("data:image/png;base64,"+screen));
+			test1.log(LogStatus.FAIL, test1.addBase64ScreenShot("data:image/png;base64,"+screen));
 			
 		} else if (result.getStatus() == ITestResult.STARTED) {
-			test.log(LogStatus.INFO, result.getName() + " test is started in ");
+			test1.log(LogStatus.INFO, result.getName() + " test is started in ");
 		}
 	}
 
-	@AfterMethod()
+	/*@AfterMethod()
 	public void afterMethod(ITestResult result) throws IOException {
 		getresult(result);
 	}
@@ -343,26 +343,26 @@ public class TestBase {
 	@BeforeMethod()
 	public void beforeMethod(Method result) {
 		
-		test = extent.startTest(result.getName());
-		test.log(LogStatus.INFO, result.getName() + " test Started");
+		test1 = extent.startTest(result.getName());
+		test1.log(LogStatus.INFO, result.getName() + " test Started");
 		
 	}
 
-	/*@AfterClass(alwaysRun = true)
+	@AfterClass(alwaysRun = true)
 	public void endTest() {
 		closeBrowser();
-	}*/
+	}
 
 	public void closeBrowser()  {
-		extent.endTest(test);
+		extent.endTest(test1);
 		extent.flush();
 		driver.quit();
-		/*excelReport( );
+		excelReport( );
 		SentMail.sendEmail();
-		SendOutLookMail.sendOutLookMail();*/
+		SendOutLookMail.sendOutLookMail();
 	}
 	
-	public String captureScreen(String fileName) {
+*/	public String captureScreen(String fileName) {
 		if (fileName == "") {
 			fileName = "blank";
 		}
@@ -749,12 +749,12 @@ public void webServicesInit() throws IOException {
 		}
 	
 		
-		public void closeReport()  {
-			extent.endTest(test);
+		/*public void closeReport()  {
+			extent.endTest(test1);
 			extent.flush();
 			excelReport( );					
 		}
-		
+		*/
 		public static void getAllHeaders(){
 		Header[] headersArray = closebaleHttpResponse.getAllHeaders();
 		HashMap<String, String> allHeaders = new HashMap<String, String>();
@@ -762,7 +762,7 @@ public void webServicesInit() throws IOException {
 			allHeaders.put(header.getName(), header.getValue());
 		}
 		System.out.println("Headers Array-->"+allHeaders);
-		test.log(LogStatus.INFO, "Headers Array-->"+allHeaders);
+		//test1.log(LogStatus.INFO, "Headers Array-->"+allHeaders);
 		log.info("Headers Array-->"+allHeaders);
 
 		}
@@ -773,11 +773,11 @@ public void webServicesInit() throws IOException {
 			 responseJson = new JSONObject(responseString);
 			
 			System.out.println("Response JSON from API---> " + responseJson);
-			test.log(LogStatus.INFO, "Response JSON from API---> " + responseJson);
+			//test1.log(LogStatus.INFO, "Response JSON from API---> " + responseJson);
 			log.info("Response JSON from API---> " + responseJson);
 			
 			}catch(Exception e){
-				test.log(LogStatus.INFO, "Exception occured" +e.getMessage());
+				//test1.log(LogStatus.INFO, "Exception occured" +e.getMessage());
 				log.info("Exception occured" +e.getMessage());
 			}
 			return responseJson;

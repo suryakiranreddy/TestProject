@@ -19,10 +19,11 @@ import com.aventstack.extentreports.Status;
 import TestBase.TestBase;
 
 public class TestListner extends TestBase implements ITestListener {
-
+	static ExtentManager extentManager=new ExtentManager();
 	// Extent Report Declarations
-	private static ExtentReports extent = ExtentManager.createInstance();
-	private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+	private static ExtentReports extent = extentManager.createInstance();
+	//private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+	public static ExtentTest test;
 
 	@Override
 	public void onStart(ITestContext context) {
@@ -36,31 +37,35 @@ public class TestListner extends TestBase implements ITestListener {
 	}
 
 	@Override
-	public void onTestStart(ITestResult result) {
+	public   void onTestStart(ITestResult result) {
 		System.out.println((result.getMethod().getMethodName() + " started!"));
 		System.out.println((result.getMethod().getDescription() + " started!"));
-		ExtentTest extentTest = extent.createTest(result.getName() + " - " + result.getMethod().getDescription());
-		test.set(extentTest);
+		test= extent.createTest(result.getName() + " - " + result.getMethod().getDescription());
+	//	ExtentTest extentTest = extent.createTest(result.getName() , result.getMethod().getDescription());
+
+		//test.set(extentTest);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		System.out.println((result.getMethod().getMethodName() + " passed!"));
-		test.get().pass("Test passed");
+		test.pass(result.getMethod().getMethodName() + " passed!");
+		//test.get().pass("Test passed");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		System.out.println((result.getMethod().getMethodName() + " failed!"));
-		test.get().fail(result.getThrowable());
+		test.fail(result.getMethod().getMethodName() + " failed!");
+		//test.get().fail(result.getThrowable());
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		String source = ts.getScreenshotAs(OutputType.BASE64);
 		try {
-
-			test.get().log(Status.FAIL, result.getMethod().getMethodName() + " failed!",
-					MediaEntityBuilder.createScreenCaptureFromBase64String("data:image/png;base64," + source).build());
-		} catch (IOException e) {
+     test.addScreenCaptureFromBase64String("data:image/png;base64," + source);
+			//test.get().log(Status.FAIL, result.getMethod().getMethodName() + " failed!",
+			//		MediaEntityBuilder.createScreenCaptureFromBase64String("data:image/png;base64," + source).build());
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -70,7 +75,8 @@ public class TestListner extends TestBase implements ITestListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		System.out.println((result.getMethod().getMethodName() + " skipped!"));
-		test.get().skip(result.getThrowable());
+		test.skip(result.getMethod().getMethodName() + " skipped!");
+		//test.get().skip(result.getThrowable());
 	}
 
 	@Override
