@@ -27,11 +27,9 @@ public class GetAPIWithHeadersTest extends TestBase {
 	}
 
 	@Test(dataProvider = "getAPIData", dataProviderClass = DataProviderClass.class,description="Invalid Login Scenario with empty username and password.")
-	public void getAPIWithoutHeadersTest(String apiURL, String StatusCode, String PerPageValue, String TotalValue,
-			String LastName, String Id, String Avatar, String FirstName) throws ClientProtocolException, IOException {
+	public void getAPIWithoutHeadersTest(String customerType, String mobilnumber) throws ClientProtocolException, IOException {
 
-		GetAPIWithHeaders.getAPITestWithHeaders(apiURL, StatusCode, PerPageValue, TotalValue, LastName, Id, Avatar,
-				FirstName);
+		GetAPIWithHeaders.getAPITestWithHeaders(customerType, mobilnumber);
 
 	}
 

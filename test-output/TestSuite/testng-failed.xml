@@ -1,63 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="5" name="Failed suite [TestSuite]" parallel="tests">
-  <parameter name="wda" value="8101"/>
-  <parameter name="port" value="4726"/>
-  <parameter name="deviceName" value="iPhone 8 Plus"/>
-  <test name="IOS Test 1" preserve-order="false">
-    <parameter name="wda" value="8100"/>
-    <parameter name="port" value="4725"/>
-    <parameter name="deviceName" value="iPhone X"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [TestSuite]">
+  <parameter name="browser" value="Chrome"/>
+  <test name="FirefoxTest">
+    <parameter name="browser" value="Firefox"/>
     <classes>
-      <class name="IOSTestCases.TestCase1"/>
+      <class name="PaymateTestcases.TC_002_PaymateLogout"/>
     </classes>
-  </test> <!-- IOS Test 1 -->
-  <test name="IOS Test 2" preserve-order="false">
-    <parameter name="wda" value="8101"/>
-    <parameter name="port" value="4726"/>
-    <parameter name="deviceName" value="iPhone 8 Plus"/>
+  </test> <!-- FirefoxTest -->
+  <test name="ChromeTest">
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="IOSTestCases.TestCase1"/>
+      <class name="PaymateTestcases.TC_002_PaymateLogout"/>
     </classes>
-  </test> <!-- IOS Test 2 -->
-  <test name="IOS Test 2(failed)" parallel="tests">
-    <parameter name="wda" value="8101"/>
-    <parameter name="port" value="4726"/>
-    <parameter name="deviceName" value="iPhone 8 Plus"/>
+  </test> <!-- ChromeTest -->
+  <test name="FirefoxTest(failed)">
+    <parameter name="browser" value="Firefox"/>
     <classes>
-      <class name="IOSTestCases.TestCase1">
+      <class name="PaymateTestcases.TC_002_PaymateLogout">
         <methods>
-          <include name="testCase1" invocation-numbers="0"/>
-          <include name="afterMethod"/>
-          <include name="afterMethod"/>
-          <include name="TestEngine"/>
-          <include name="TestEngine"/>
           <include name="endreport"/>
           <include name="endreport"/>
-          <include name="beforeMethod"/>
-          <include name="beforeMethod"/>
+          <include name="TestEngine"/>
+          <include name="TestEngine"/>
+          <include name="PaymateLogoutTest"/>
         </methods>
-      </class> <!-- IOSTestCases.TestCase1 -->
+      </class> <!-- PaymateTestcases.TC_002_PaymateLogout -->
     </classes>
-  </test> <!-- IOS Test 2(failed) -->
-  <test name="IOS Test 1(failed)" parallel="tests">
-    <parameter name="wda" value="8100"/>
-    <parameter name="port" value="4725"/>
-    <parameter name="deviceName" value="iPhone X"/>
+  </test> <!-- FirefoxTest(failed) -->
+  <test name="ChromeTest(failed)">
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="IOSTestCases.TestCase1">
+      <class name="PaymateTestcases.TC_002_PaymateLogout">
         <methods>
-          <include name="testCase1" invocation-numbers="0"/>
-          <include name="afterMethod"/>
-          <include name="afterMethod"/>
-          <include name="TestEngine"/>
-          <include name="TestEngine"/>
           <include name="endreport"/>
           <include name="endreport"/>
-          <include name="beforeMethod"/>
-          <include name="beforeMethod"/>
+          <include name="TestEngine"/>
+          <include name="TestEngine"/>
+          <include name="PaymateLogoutTest"/>
         </methods>
-      </class> <!-- IOSTestCases.TestCase1 -->
+      </class> <!-- PaymateTestcases.TC_002_PaymateLogout -->
     </classes>
-  </test> <!-- IOS Test 1(failed) -->
+  </test> <!-- ChromeTest(failed) -->
 </suite> <!-- Failed suite [TestSuite] -->

@@ -18,7 +18,7 @@ public class BrowserStackDemo extends TestBase{
 	 public  final String USERNAME = "suryakiran14";
 	  public  final String AUTOMATE_KEY = "TWtczMYygyckEgLGz6ND";
 	  public  final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-	BorkenLinks borkenLinks;
+	  BorkenLinks borkenLinks;
 	
 	
 	

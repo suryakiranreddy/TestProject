@@ -1,9 +1,10 @@
 package webServicesPages;
 
-import TestBase.TestBase;
+
 import java.io.IOException;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -12,14 +13,16 @@ import org.testng.annotations.Listeners;
 import com.aventstack.extentreports.Status;
 import com.mysql.cj.xdevapi.Result;
 
+import Common.ExtentTestManager;
+import TestBase.TestBase;
 
-import Common.TestListner;
 
-public class GetAPIWithHeaders extends TestListner {
+
+public class GetAPIWithHeaders extends TestBase {
 
 	public static void getAPITestWithHeaders(String apiURL, String StatusCode, String PerPageValue, 
 			String TotalValue, String LastName, String Id,
-			String Avatar, String FirstName) throws ClientProtocolException, IOException {
+			String Avatar, String FirstName) throws ClientProtocolException, IOException, NumberFormatException, JSONException {
 
 		
 		
@@ -31,13 +34,13 @@ public class GetAPIWithHeaders extends TestListner {
 		// ***** URL verification *****
 		serviceUrl = Repository.getProperty("URL");
 		url = serviceUrl + apiURL;
-		
-		test.log(Status.INFO, "Actual Testing get URI- " + url);
+		ExtentTestManager.getTest().log(Status.INFO, "Hellooo started base test3");
+		ExtentTestManager.getTest().log(Status.INFO, "Actual Testing get URI- " + url);
 		log.info("Actual Testing get URI- " + url);
-		test.log(Status.INFO, "expected Testing get URI- https://reqres.in/api/users ");
+		ExtentTestManager.getTest().log(Status.INFO, "expected Testing get URI- https://reqres.in/api/users ");
 		log.info("expected Testing get URI- https://reqres.in/api/users");
 		Assert.assertTrue(url.contains("https://reqres.in/api/users"));
-		test.log(Status.INFO, "https://reqres.in/api/users URL matched" + ITestResult.SUCCESS);
+		ExtentTestManager.getTest().log(Status.INFO, "https://reqres.in/api/users URL matched" + ITestResult.SUCCESS);
 		log.info("https://reqres.in/api/users URL matched");
 
 		closebaleHttpResponse = get(url, headerMap);
@@ -45,12 +48,12 @@ public class GetAPIWithHeaders extends TestListner {
 		// a. Status Code:
 		int statusCode = getStatusCode();
 		System.out.println("Status Code--->" + statusCode);
-		test.log(Status.INFO, "Actual Status Code--->" + statusCode);
+		ExtentTestManager.getTest().log(Status.INFO, "Actual Status Code--->" + statusCode);
 		log.info("Actual Status Code--->" + statusCode);
-		test.log(Status.INFO, "Expected Status Code--->" + statusCode);
+		ExtentTestManager.getTest().log(Status.INFO, "Expected Status Code--->" + statusCode);
 		log.info("Expected Status Code--->" + statusCode);
 		Assert.assertEquals(statusCode, Integer.parseInt(StatusCode), "Status code is not 200");
-		test.log(Status.INFO, statusCode + "Status code matched");
+		ExtentTestManager.getTest().log(Status.INFO, statusCode + "Status code matched");
 		log.info(statusCode + "Status code matched");
 
 		// b. Json String:
@@ -58,27 +61,27 @@ public class GetAPIWithHeaders extends TestListner {
 
 		// single value assertion:
 		// per_page:
-		test.log(Status.INFO, "***********************************************************************************");
+		ExtentTestManager.getTest().log(Status.INFO, "***********************************************************************************");
 		String perPageValue = getValueByJPath(responseJson, "/per_page");
-		test.log(Status.INFO, "single value assertion:");
+		ExtentTestManager.getTest().log(Status.INFO, "single value assertion:");
 		System.out.println("Actual value of per page is-->" + perPageValue);
-		test.log(Status.INFO, "Actual value of per page is-->" + perPageValue);
+		ExtentTestManager.getTest().log(Status.INFO, "Actual value of per page is-->" + perPageValue);
 		log.info("Actual value of per page is-->" + perPageValue);
-		test.log(Status.INFO, "Expected value of per page is-->" + perPageValue);
+		ExtentTestManager.getTest().log(Status.INFO, "Expected value of per page is-->" + perPageValue);
 		log.info("Expected value of per page is-->" + perPageValue);
 		Assert.assertEquals(perPageValue, PerPageValue);
-		test.log(Status.INFO, perPageValue + " perPageValue matched");
+		ExtentTestManager.getTest().log(Status.INFO, perPageValue + " perPageValue matched");
 		log.info(perPageValue + " perPageValue matched");
 
 		// total:
 		String totalValue = getValueByJPath(responseJson, "/total");
 		System.out.println("Acutal value of total is-->" + totalValue);
-		test.log(Status.INFO, "Actual value of total is-->" + totalValue);
+		ExtentTestManager.getTest().log(Status.INFO, "Actual value of total is-->" + totalValue);
 		log.info("Actual value of total is-->" + totalValue);
-		test.log(Status.INFO, "Expected value of total is-->" + TotalValue);
+		ExtentTestManager.getTest().log(Status.INFO, "Expected value of total is-->" + TotalValue);
 		log.info("Expected value of total is-->" + TotalValue);
 		Assert.assertEquals(totalValue, TotalValue);
-		test.log(Status.INFO, TotalValue + " TotalValue matched");
+		ExtentTestManager.getTest().log(Status.INFO, TotalValue + " TotalValue matched");
 		log.info(TotalValue + " TotalValue matched");
 
 		// get the value from JSON ARRAY:
@@ -87,7 +90,7 @@ public class GetAPIWithHeaders extends TestListner {
 		String avatar = getValueByJPath(responseJson, "/data[0]/avatar");
 		String firstName = getValueByJPath(responseJson, "/data[0]/first_name");
 
-		test.log(Status.INFO, "***********************************************************************************");
+		/*test.log(Status.INFO, "***********************************************************************************");
 		test.log(Status.INFO, "get the value from JSON ARRAY:");
 		log.info("get the value from JSON ARRAY:");
 		System.out.println(lastName);
@@ -126,7 +129,7 @@ public class GetAPIWithHeaders extends TestListner {
 		test.log(Status.INFO, firstName + " firstName matched");
 		log.info(firstName + " firstName matched");
 
-		getAllHeaders();
+*/		getAllHeaders();
 
 		/*
 		 * {

@@ -250,7 +250,7 @@ public class AndroidTestBase {
 		
        //androidDriver.installApp(System.getProperty("user.dir")+"/Apps/"+ Repository.getProperty("Apkname")+".apk");
 		
-		String cmd = "adb shell getprop ro.build.version.release";
+		/*String cmd = "adb shell getprop ro.build.version.release";
 
 		String osVersion=executeCommand(cmd);
 		    if(osVersion.contains("7"))
@@ -265,11 +265,12 @@ public class AndroidTestBase {
 		        executeCommand(cmd);
 		        System.out.println("uninstall io.appium.unlock");
 
-		    }
+		    }*/
 		    File appDir = new File(System.getProperty("user.dir"), "/Apps/");
 			File app = new File(appDir, Repository.getProperty("Apkname")+".apk");
 	        System.out.println(app);
-		    DesiredCapabilities capabilities = new DesiredCapabilities();
+		   
+	        DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, Repository.getProperty("deviceName"));//Google Nexus 4 - 4.2.2 - API 17 - 768x1280_1
 			capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 			/*capabilities.setCapability("appPackage", "com.flipkart.android");
@@ -277,6 +278,8 @@ public class AndroidTestBase {
 		
 		URL url = new URL("http://0.0.0.0:4723/wd/hub");
 		androidDriver = new AndroidDriver<MobileElement>(url, capabilities);
+		
+		
 		androidDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		System.out.println("getContext: "+androidDriver.getContext());
 		System.out.println("currentActivity: "+androidDriver.currentActivity());

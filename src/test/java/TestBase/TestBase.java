@@ -89,6 +89,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.json.JSONArray;
+import org.json.JSONException;
 
 
 public class TestBase {
@@ -404,6 +405,7 @@ public static WebElement waitForClickable(By locator) {
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 		
 	}
+
 public static boolean click(By locator) {
 	
 		
@@ -414,8 +416,7 @@ public static boolean click(By locator) {
 			elm.click();
 			log.info("Click: " +locator.toString());
 			return true;
-		}
-		
+		}		
 	}
 
 
@@ -442,6 +443,7 @@ public static boolean sendkeys(By locator, String data) {
 
 public static void selectVisibleText(By locator, String visibleText) {
 	WebElement elm = waitForVisibile(locator);
+	WebElement elm1 = driver.findElement(By.className(""));
 	Select se=new Select(elm);
 	se.selectByVisibleText(visibleText);
 	log.info("Select visible text in the dropdown : "+locator.toString());
@@ -737,7 +739,7 @@ public void webServicesInit() throws IOException {
 		
 		
 
-		public static String getValueByJPath(JSONObject responsejson, String jpath){
+		public static String getValueByJPath(JSONObject responsejson, String jpath) throws NumberFormatException, JSONException{
 			Object obj = responsejson;
 			for(String s : jpath.split("/")) 
 				if(!s.isEmpty()) 

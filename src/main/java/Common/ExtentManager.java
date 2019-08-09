@@ -15,16 +15,16 @@ public class ExtentManager {
 
 	 
 	private static ExtentReports extent;
-    private  String reportFileName =  "./Reports/HtmlReports/Automaton Report - ";
+    private static  String reportFileName =  "./Reports/HtmlReports/Automaton Report - ";
     
     
-    public  ExtentReports getInstance() {
+    public static  ExtentReports getInstance() {
         if (extent == null)
             createInstance();
         return extent;
     }
   //Create an extent report instance
-    public  ExtentReports createInstance() {
+    public static  ExtentReports createInstance() {
         
     	String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
     	//extent = new ExtentReports (userDir +"\\test-output\\" + timeStamp + ".html", true);
