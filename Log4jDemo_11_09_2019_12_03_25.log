@@ -1,0 +1,27 @@
+2019-09-11 12:03:26 INFO  TestBase:25 - Actual //testing get URI- https://reqres.in/api/users
+2019-09-11 12:03:26 INFO  TestBase:27 - expected //testing get URI- https://reqres.in/api/users
+2019-09-11 12:03:26 INFO  TestBase:30 - https://reqres.in/api/users URL matched
+2019-09-11 12:03:28 INFO  TestBase:38 - Actual Status Code--->200
+2019-09-11 12:03:28 INFO  TestBase:40 - Expected Status Code--->200
+2019-09-11 12:03:28 INFO  TestBase:43 - 200Status code matched
+2019-09-11 12:03:28 INFO  TestBase:780 - Response JSON from API---> {"per_page":6,"total":12,"data":[{"last_name":"Bluth","id":1,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg","first_name":"George","email":"george.bluth@reqres.in"},{"last_name":"Weaver","id":2,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg","first_name":"Janet","email":"janet.weaver@reqres.in"},{"last_name":"Wong","id":3,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg","first_name":"Emma","email":"emma.wong@reqres.in"},{"last_name":"Holt","id":4,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg","first_name":"Eve","email":"eve.holt@reqres.in"},{"last_name":"Morris","id":5,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg","first_name":"Charles","email":"charles.morris@reqres.in"},{"last_name":"Ramos","id":6,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg","first_name":"Tracey","email":"tracey.ramos@reqres.in"}],"page":1,"total_pages":2}
+2019-09-11 12:03:28 INFO  TestBase:60 - Actual value of per page is-->6
+2019-09-11 12:03:28 INFO  TestBase:62 - Expected value of per page is-->6
+2019-09-11 12:03:28 INFO  TestBase:65 - 6 perPageValue matched
+2019-09-11 12:03:28 INFO  TestBase:71 - Actual value of total is-->12
+2019-09-11 12:03:28 INFO  TestBase:73 - Expected value of total is-->12
+2019-09-11 12:03:28 INFO  TestBase:76 - 12 TotalValue matched
+2019-09-11 12:03:28 INFO  TestBase:86 - get the value from JSON ARRAY:
+2019-09-11 12:03:28 INFO  TestBase:89 - Actual lastName is-->Bluth
+2019-09-11 12:03:28 INFO  TestBase:91 - Expected lastName is-->Bluth
+2019-09-11 12:03:28 INFO  TestBase:94 - Bluth LastName matched
+2019-09-11 12:03:28 INFO  TestBase:98 - Actual id is-->1
+2019-09-11 12:03:28 INFO  TestBase:100 - Expected id is-->1
+2019-09-11 12:03:28 INFO  TestBase:103 - Bluth id matched
+2019-09-11 12:03:28 INFO  TestBase:107 - Actual avatar name is-->https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg
+2019-09-11 12:03:28 INFO  TestBase:109 - Expected avatar name is-->https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg
+2019-09-11 12:03:28 INFO  TestBase:112 - https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg avatar name matched
+2019-09-11 12:03:28 INFO  TestBase:116 - Actual firstName is-->George
+2019-09-11 12:03:28 INFO  TestBase:118 - Expected firstName is-->George
+2019-09-11 12:03:28 INFO  TestBase:121 - George firstName matched
+2019-09-11 12:03:28 INFO  TestBase:769 - Headers Array-->{Transfer-Encoding=chunked, Server=cloudflare, CF-RAY=51479ba7dcb5c322-SIN, Access-Control-Allow-Origin=*, Connection=keep-alive, Date=Wed, 11 Sep 2019 06:33:03 GMT, Via=1.1 vegur, CF-Cache-Status=HIT, Etag=W/"3fc-L9Y9qPKbIuBn8jgEBvFsXcYiYX0", Cache-Control=public, max-age=14400, Set-Cookie=__cfduid=d73afd6b3cf7076750b79dfda9340537c1568183583; expires=Thu, 10-Sep-20 06:33:03 GMT; path=/; domain=.reqres.in; HttpOnly; Secure, Vary=Accept-Encoding, Expires=Wed, 11 Sep 2019 10:33:03 GMT, Age=2362, Content-Type=application/json; charset=utf-8, X-Powered-By=Express, Expect-CT=max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"}

@@ -1,8 +1,54 @@
-2019-06-01 13:43:03,876 [main] INFO TestBase.TestBase - *** Test execution getAPIWithoutHeadersTest failed...
-2019-06-01 13:43:03,908 [main] INFO TestBase.TestBase - getAPIWithoutHeadersTest failed!
-2019-06-01 13:43:03,910 [main] INFO TestBase.TestBase - *** Test execution getAPIWithoutHeadersTest failed...
-2019-06-01 13:43:03,911 [main] INFO TestBase.TestBase - getAPIWithoutHeadersTest failed!
-2019-06-01 13:44:30,823 [main] INFO TestBase.TestBase - *** Test execution getAPIWithoutHeadersTest failed...
-2019-06-01 13:44:30,828 [main] INFO TestBase.TestBase - getAPIWithoutHeadersTest failed!
-2019-06-01 13:44:30,832 [main] INFO TestBase.TestBase - *** Test execution getAPIWithoutHeadersTest failed...
-2019-06-01 13:44:30,833 [main] INFO TestBase.TestBase - getAPIWithoutHeadersTest failed!
+2019-09-11 11:54:19,524 [main] INFO TestBase.TestBase - Actual //testing get URI- https://reqres.in/api/users
+2019-09-11 11:54:19,529 [main] INFO TestBase.TestBase - expected //testing get URI- https://reqres.in/api/users
+2019-09-11 11:54:19,531 [main] INFO TestBase.TestBase - https://reqres.in/api/users URL matched
+2019-09-11 11:54:22,116 [main] INFO TestBase.TestBase - Actual Status Code--->200
+2019-09-11 11:54:22,116 [main] INFO TestBase.TestBase - Expected Status Code--->200
+2019-09-11 11:54:22,117 [main] INFO TestBase.TestBase - 200Status code matched
+2019-09-11 11:54:22,126 [main] INFO TestBase.TestBase - Response JSON from API---> {"per_page":6,"total":12,"data":[{"last_name":"Bluth","id":1,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg","first_name":"George","email":"george.bluth@reqres.in"},{"last_name":"Weaver","id":2,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg","first_name":"Janet","email":"janet.weaver@reqres.in"},{"last_name":"Wong","id":3,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg","first_name":"Emma","email":"emma.wong@reqres.in"},{"last_name":"Holt","id":4,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg","first_name":"Eve","email":"eve.holt@reqres.in"},{"last_name":"Morris","id":5,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg","first_name":"Charles","email":"charles.morris@reqres.in"},{"last_name":"Ramos","id":6,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg","first_name":"Tracey","email":"tracey.ramos@reqres.in"}],"page":1,"total_pages":2}
+2019-09-11 11:54:22,127 [main] INFO TestBase.TestBase - Actual value of per page is-->6
+2019-09-11 11:54:22,128 [main] INFO TestBase.TestBase - Expected value of per page is-->6
+2019-09-11 11:54:22,128 [main] INFO TestBase.TestBase - 6 perPageValue matched
+2019-09-11 11:54:22,129 [main] INFO TestBase.TestBase - Actual value of total is-->12
+2019-09-11 11:54:22,129 [main] INFO TestBase.TestBase - Expected value of total is-->12
+2019-09-11 11:54:22,130 [main] INFO TestBase.TestBase - 12 TotalValue matched
+2019-09-11 11:54:22,131 [main] INFO TestBase.TestBase - get the value from JSON ARRAY:
+2019-09-11 11:54:22,131 [main] INFO TestBase.TestBase - Actual lastName is-->Bluth
+2019-09-11 11:54:22,131 [main] INFO TestBase.TestBase - Expected lastName is-->Bluth
+2019-09-11 11:54:22,133 [main] INFO TestBase.TestBase - Bluth LastName matched
+2019-09-11 11:54:22,134 [main] INFO TestBase.TestBase - Actual id is-->1
+2019-09-11 11:54:22,135 [main] INFO TestBase.TestBase - Expected id is-->1
+2019-09-11 11:54:22,135 [main] INFO TestBase.TestBase - Bluth id matched
+2019-09-11 11:54:22,136 [main] INFO TestBase.TestBase - Actual avatar name is-->https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg
+2019-09-11 11:54:22,137 [main] INFO TestBase.TestBase - Expected avatar name is-->https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg
+2019-09-11 11:54:22,137 [main] INFO TestBase.TestBase - https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg avatar name matched
+2019-09-11 11:54:22,138 [main] INFO TestBase.TestBase - Actual firstName is-->George
+2019-09-11 11:54:22,138 [main] INFO TestBase.TestBase - Expected firstName is-->George
+2019-09-11 11:54:22,139 [main] INFO TestBase.TestBase - George firstName matched
+2019-09-11 11:54:22,140 [main] INFO TestBase.TestBase - Headers Array-->{Transfer-Encoding=chunked, Server=cloudflare, CF-RAY=51478e4f1da1c363-SIN, Access-Control-Allow-Origin=*, Connection=keep-alive, Date=Wed, 11 Sep 2019 06:23:57 GMT, Via=1.1 vegur, CF-Cache-Status=HIT, Etag=W/"3fc-L9Y9qPKbIuBn8jgEBvFsXcYiYX0", Cache-Control=public, max-age=14400, Set-Cookie=__cfduid=d13dc9cb83f9ca0498dee9b62c6cae7b51568183037; expires=Thu, 10-Sep-20 06:23:57 GMT; path=/; domain=.reqres.in; HttpOnly; Secure, Vary=Accept-Encoding, Expires=Wed, 11 Sep 2019 10:23:57 GMT, Age=1816, Content-Type=application/json; charset=utf-8, X-Powered-By=Express, Expect-CT=max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"}
+2019-09-11 12:00:42,097 [main] INFO TestBase.TestBase - Actual //testing get URI- https://reqres.in/api/users
+2019-09-11 12:00:42,103 [main] INFO TestBase.TestBase - expected //testing get URI- https://reqres.in/api/users
+2019-09-11 12:00:42,106 [main] INFO TestBase.TestBase - https://reqres.in/api/users URL matched
+2019-09-11 12:00:44,293 [main] INFO TestBase.TestBase - Actual Status Code--->200
+2019-09-11 12:00:44,294 [main] INFO TestBase.TestBase - Expected Status Code--->200
+2019-09-11 12:00:44,295 [main] INFO TestBase.TestBase - 200Status code matched
+2019-09-11 12:00:44,303 [main] INFO TestBase.TestBase - Response JSON from API---> {"per_page":6,"total":12,"data":[{"last_name":"Bluth","id":1,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg","first_name":"George","email":"george.bluth@reqres.in"},{"last_name":"Weaver","id":2,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg","first_name":"Janet","email":"janet.weaver@reqres.in"},{"last_name":"Wong","id":3,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg","first_name":"Emma","email":"emma.wong@reqres.in"},{"last_name":"Holt","id":4,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg","first_name":"Eve","email":"eve.holt@reqres.in"},{"last_name":"Morris","id":5,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg","first_name":"Charles","email":"charles.morris@reqres.in"},{"last_name":"Ramos","id":6,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg","first_name":"Tracey","email":"tracey.ramos@reqres.in"}],"page":1,"total_pages":2}
+2019-09-11 12:00:44,307 [main] INFO TestBase.TestBase - Actual value of per page is-->6
+2019-09-11 12:00:44,308 [main] INFO TestBase.TestBase - Expected value of per page is-->6
+2019-09-11 12:00:44,308 [main] INFO TestBase.TestBase - 6 perPageValue matched
+2019-09-11 12:00:44,309 [main] INFO TestBase.TestBase - Actual value of total is-->12
+2019-09-11 12:00:44,310 [main] INFO TestBase.TestBase - Expected value of total is-->12
+2019-09-11 12:00:44,310 [main] INFO TestBase.TestBase - 12 TotalValue matched
+2019-09-11 12:00:44,311 [main] INFO TestBase.TestBase - get the value from JSON ARRAY:
+2019-09-11 12:00:44,311 [main] INFO TestBase.TestBase - Actual lastName is-->Bluth
+2019-09-11 12:00:44,312 [main] INFO TestBase.TestBase - Expected lastName is-->Bluth
+2019-09-11 12:00:44,314 [main] INFO TestBase.TestBase - Bluth LastName matched
+2019-09-11 12:00:44,314 [main] INFO TestBase.TestBase - Actual id is-->1
+2019-09-11 12:00:44,315 [main] INFO TestBase.TestBase - Expected id is-->1
+2019-09-11 12:00:44,315 [main] INFO TestBase.TestBase - Bluth id matched
+2019-09-11 12:00:44,316 [main] INFO TestBase.TestBase - Actual avatar name is-->https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg
+2019-09-11 12:00:44,316 [main] INFO TestBase.TestBase - Expected avatar name is-->https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg
+2019-09-11 12:00:44,317 [main] INFO TestBase.TestBase - https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg avatar name matched
+2019-09-11 12:00:44,318 [main] INFO TestBase.TestBase - Actual firstName is-->George
+2019-09-11 12:00:44,318 [main] INFO TestBase.TestBase - Expected firstName is-->George
+2019-09-11 12:00:44,319 [main] INFO TestBase.TestBase - George firstName matched
+2019-09-11 12:00:44,319 [main] INFO TestBase.TestBase - Headers Array-->{Transfer-Encoding=chunked, Server=cloudflare, CF-RAY=514797a3cb32e247-SIN, Access-Control-Allow-Origin=*, Connection=keep-alive, Date=Wed, 11 Sep 2019 06:30:19 GMT, Via=1.1 vegur, CF-Cache-Status=HIT, Etag=W/"3fc-L9Y9qPKbIuBn8jgEBvFsXcYiYX0", Cache-Control=public, max-age=14400, Set-Cookie=__cfduid=d7a094cb32b609e46e90a421f56fc58b81568183419; expires=Thu, 10-Sep-20 06:30:19 GMT; path=/; domain=.reqres.in; HttpOnly; Secure, Vary=Accept-Encoding, Expires=Wed, 11 Sep 2019 10:30:19 GMT, Age=2198, Content-Type=application/json; charset=utf-8, X-Powered-By=Express, Expect-CT=max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"}

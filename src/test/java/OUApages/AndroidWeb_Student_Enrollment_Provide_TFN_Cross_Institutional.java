@@ -140,6 +140,11 @@ public class AndroidWeb_Student_Enrollment_Provide_TFN_Cross_Institutional exten
 	
 	
 	public static void androidWeb_Student_Enrollment_Provide_TFN_Cross_Institutional() throws Exception {
+		
+		List<String> newTab = new List<String>(driver.getWindowHandles());
+        driver.switchTo().window(newTab.get(1));
+        
+
 		test.log(LogStatus.INFO,"<b style=\"color:brown;\">==================== Subject Enrollment ==========================</b>");
 		log.info("==================== Subject Enrollment  ==========================");
 		infoScreenshot(androidDriver, "OUA site core Homepage");

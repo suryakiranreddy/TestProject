@@ -1,45 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [TestSuite]">
-  <parameter name="browser" value="Chrome"/>
-  <test name="FirefoxTest">
-    <parameter name="browser" value="Firefox"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test verbose="2" name="Default test">
     <classes>
-      <class name="PaymateTestcases.TC_002_PaymateLogout"/>
+      <class name="webServicesTest.GetAPIWithoutHeadersTest"/>
     </classes>
-  </test> <!-- FirefoxTest -->
-  <test name="ChromeTest">
-    <parameter name="browser" value="Chrome"/>
-    <classes>
-      <class name="PaymateTestcases.TC_002_PaymateLogout"/>
-    </classes>
-  </test> <!-- ChromeTest -->
-  <test name="FirefoxTest(failed)">
-    <parameter name="browser" value="Firefox"/>
-    <classes>
-      <class name="PaymateTestcases.TC_002_PaymateLogout">
-        <methods>
-          <include name="endreport"/>
-          <include name="endreport"/>
-          <include name="TestEngine"/>
-          <include name="TestEngine"/>
-          <include name="PaymateLogoutTest"/>
-        </methods>
-      </class> <!-- PaymateTestcases.TC_002_PaymateLogout -->
-    </classes>
-  </test> <!-- FirefoxTest(failed) -->
-  <test name="ChromeTest(failed)">
-    <parameter name="browser" value="Chrome"/>
-    <classes>
-      <class name="PaymateTestcases.TC_002_PaymateLogout">
-        <methods>
-          <include name="endreport"/>
-          <include name="endreport"/>
-          <include name="TestEngine"/>
-          <include name="TestEngine"/>
-          <include name="PaymateLogoutTest"/>
-        </methods>
-      </class> <!-- PaymateTestcases.TC_002_PaymateLogout -->
-    </classes>
-  </test> <!-- ChromeTest(failed) -->
-</suite> <!-- Failed suite [TestSuite] -->
+  </test> <!-- Default test -->
+</suite> <!-- Failed suite [Default suite] -->

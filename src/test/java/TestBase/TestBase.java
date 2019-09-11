@@ -125,6 +125,7 @@ public class TestBase {
 	static {
 		Calendar calendar = Calendar.getInstance();
 		SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
+		System.setProperty("current.date.time", formater.format(new Date()));
 		extent = new ExtentReports(System.getProperty("user.dir") + "/Reports/HtmlReports/Automaton Report"+".html", true);
 		//extent = new ExtentReports(System.getProperty("user.dir") + "/Reports/HtmlReports/Automaton Report"+".html", false);
 

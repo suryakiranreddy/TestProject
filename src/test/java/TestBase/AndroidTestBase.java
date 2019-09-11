@@ -277,6 +277,7 @@ public class AndroidTestBase {
 			capabilities.setCapability("appActivity", "com.flipkart.android.activity.HomeFragmentHolderActivity");*/
 		
 		URL url = new URL("http://0.0.0.0:4723/wd/hub");
+		
 		androidDriver = new AndroidDriver<MobileElement>(url, capabilities);
 		
 		

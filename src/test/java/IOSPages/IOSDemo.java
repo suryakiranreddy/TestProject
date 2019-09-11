@@ -21,7 +21,7 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class IOSDemo extends IOSTestBase{
+public class IOSDemo {
 	
 	public  IOSDriver driver;
 	@Test
