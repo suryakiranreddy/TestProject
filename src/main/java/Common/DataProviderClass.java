@@ -11,6 +11,11 @@ public class DataProviderClass extends TestBase{
 		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("excelSheetPath"), "login");
 		return data;
 	}
+	@DataProvider
+	public static Object[][] testData() throws Exception {
+		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("excelSheetPath"), "getApi");
+		return data;
+	}
 /*	@DataProvider(name="getAPIData")
 	public static Object[][] registrartion() throws Exception {
 		Object data[][] = TestDataProvider.excelReader(Repository.getProperty("excelSheetPath"), "res");

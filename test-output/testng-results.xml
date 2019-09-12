@@ -1,67 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4396" started-at="2019-09-11T06:35:49Z" finished-at="2019-09-11T06:35:54Z">
+  <suite name="Default suite" duration-ms="10934" started-at="2019-09-12T06:48:28Z" finished-at="2019-09-12T06:48:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4396" started-at="2019-09-11T06:35:49Z" finished-at="2019-09-11T06:35:54Z">
-      <class name="webServicesTest.GetAPIWithoutHeadersTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:webServicesTest.GetAPIWithoutHeadersTest@79efed2d]" name="setUp" is-config="true" duration-ms="85" started-at="2019-09-11T12:05:49Z" finished-at="2019-09-11T12:05:49Z">
+    <test name="Default test" duration-ms="10934" started-at="2019-09-12T06:48:28Z" finished-at="2019-09-12T06:48:39Z">
+      <class name="webServicesTest.ExtentReportsTest">
+        <test-method status="PASS" signature="Setup()[pri:0, instance:webServicesTest.ExtentReportsTest@67784306]" name="Setup" is-config="true" duration-ms="10009" started-at="2019-09-12T12:18:28Z" finished-at="2019-09-12T12:18:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="getAPIWithoutHeadersTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:webServicesTest.GetAPIWithoutHeadersTest@79efed2d]" name="getAPIWithoutHeadersTest" duration-ms="3342" started-at="2019-09-11T12:05:50Z" data-provider="testData" finished-at="2019-09-11T12:05:54Z">
+        </test-method> <!-- Setup -->
+        <test-method status="PASS" signature="test1()[pri:0, instance:webServicesTest.ExtentReportsTest@67784306]" name="test1" duration-ms="41" started-at="2019-09-12T12:18:38Z" finished-at="2019-09-12T12:18:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="getresult(org.testng.ITestResult)[pri:0, instance:webServicesTest.ExtentReportsTest@67784306]" name="getresult" is-config="true" duration-ms="6" started-at="2019-09-12T12:18:38Z" finished-at="2019-09-12T12:18:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[/api/users]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[12]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Bluth]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[George]]>
+                <![CDATA[[TestResult name=test1 status=SUCCESS method=ExtentReportsTest.test1()[pri:0, instance:webServicesTest.ExtentReportsTest@67784306] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getAPIWithoutHeadersTest -->
-        <test-method status="PASS" signature="endreport()[pri:0, instance:webServicesTest.GetAPIWithoutHeadersTest@79efed2d]" name="endreport" is-config="true" duration-ms="0" started-at="2019-09-11T12:05:54Z" finished-at="2019-09-11T12:05:54Z">
+        </test-method> <!-- getresult -->
+        <test-method status="PASS" signature="test2()[pri:1, instance:webServicesTest.ExtentReportsTest@67784306]" name="test2" duration-ms="5" started-at="2019-09-12T12:18:38Z" finished-at="2019-09-12T12:18:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- endreport -->
-      </class> <!-- webServicesTest.GetAPIWithoutHeadersTest -->
+        </test-method> <!-- test2 -->
+        <test-method status="PASS" signature="getresult(org.testng.ITestResult)[pri:0, instance:webServicesTest.ExtentReportsTest@67784306]" name="getresult" is-config="true" duration-ms="4" started-at="2019-09-12T12:18:38Z" finished-at="2019-09-12T12:18:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=test2 status=SUCCESS method=ExtentReportsTest.test2()[pri:1, instance:webServicesTest.ExtentReportsTest@67784306] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getresult -->
+        <test-method status="PASS" signature="testclose()[pri:0, instance:webServicesTest.ExtentReportsTest@67784306]" name="testclose" is-config="true" duration-ms="839" started-at="2019-09-12T12:18:38Z" finished-at="2019-09-12T12:18:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testclose -->
+      </class> <!-- webServicesTest.ExtentReportsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

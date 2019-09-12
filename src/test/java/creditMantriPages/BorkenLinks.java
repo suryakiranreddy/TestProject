@@ -12,8 +12,8 @@ import org.openqa.selenium.WebElement;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class BorkenLinks extends TestBase {
-	/*String homePage = "https://www.lunch2desk.co.in/n/";
-	static String url = "https://www.lunch2desk.co.in/n/";*/
+	String homePage = "https://www.lunch2desk.co.in/n/";
+	static String url = "https://www.lunch2desk.co.in/n/";
 	static String response = "";
 	static int responseCode;
 	static HttpURLConnection connection;
@@ -37,6 +37,7 @@ public class BorkenLinks extends TestBase {
 		elementList.addAll(driver.findElements(By.tagName("img")));
 		List<WebElement> finalList = new ArrayList<WebElement>();
 		for (WebElement element : elementList ) {
+			System.out.println(element.getAttribute("href"));
 			if (element.getAttribute("href") != null && !element.getAttribute("href").contains("javascript")) {
 				finalList.add(element);
 			}
@@ -61,15 +62,15 @@ public class BorkenLinks extends TestBase {
 		System.out.println("bokenLinks");
 		List<WebElement> allLinks = findAllLinks(driver);
 		System.out.println("Total number of links found : " + allLinks.size());
-		test.log(LogStatus.INFO, "Total number of links found : " + allLinks.size());
+		//test.log(LogStatus.INFO, "Total number of links found : " + allLinks.size());
 		log.info("Total number of links found : " + allLinks.size());
 		for (WebElement element : allLinks) {
 			try{
 		
-				test.log(LogStatus.INFO, "URL: " + element.getAttribute("href") + " --> returned "
-						+ isLinkBroken(new URL(element.getAttribute("href"))) + " --> Resonse code" + responseCode);
-				log.info("URL: " + element.getAttribute("href") + " --> returned "
-						+ isLinkBroken(new URL(element.getAttribute("href"))) + " --> Response code-" + responseCode);
+				//test.log(LogStatus.INFO, "URL: " + element.getAttribute("href") + " --> returned "
+						//+ isLinkBroken(new URL(element.getAttribute("href"))) + " --> Resonse code" + responseCode);
+				//log.info("URL: " + element.getAttribute("href") + " --> returned "
+					//	+ isLinkBroken(new URL(element.getAttribute("href"))) + " --> Response code-" + responseCode);
 			}catch(Exception e)	{
 				e.getMessage();
 			}

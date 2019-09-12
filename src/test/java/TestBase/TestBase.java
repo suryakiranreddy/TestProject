@@ -143,7 +143,8 @@ public class TestBase {
 		driver.manage().window().fullscreen();
 		//driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.get(Repository.getProperty("url"));
+		//driver.get(Repository.getProperty("url"));https://qa-cmol1.creditmantri.in
+		driver.get("https://qa-cmol1.creditmantri.in");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		

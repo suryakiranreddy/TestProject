@@ -1,0 +1,27 @@
+2019-09-11 12:20:54,551 [main] INFO TestBase.TestBase - Actual //testing get URI- https://reqres.in/api/users
+2019-09-11 12:20:54,555 [main] INFO TestBase.TestBase - expected //testing get URI- https://reqres.in/api/users
+2019-09-11 12:20:54,558 [main] INFO TestBase.TestBase - https://reqres.in/api/users URL matched
+2019-09-11 12:20:56,894 [main] INFO TestBase.TestBase - Actual Status Code--->200
+2019-09-11 12:20:56,895 [main] INFO TestBase.TestBase - Expected Status Code--->200
+2019-09-11 12:20:56,895 [main] INFO TestBase.TestBase - 200Status code matched
+2019-09-11 12:20:56,903 [main] INFO TestBase.TestBase - Response JSON from API---> {"per_page":6,"total":12,"data":[{"last_name":"Bluth","id":1,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg","first_name":"George","email":"george.bluth@reqres.in"},{"last_name":"Weaver","id":2,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg","first_name":"Janet","email":"janet.weaver@reqres.in"},{"last_name":"Wong","id":3,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg","first_name":"Emma","email":"emma.wong@reqres.in"},{"last_name":"Holt","id":4,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg","first_name":"Eve","email":"eve.holt@reqres.in"},{"last_name":"Morris","id":5,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg","first_name":"Charles","email":"charles.morris@reqres.in"},{"last_name":"Ramos","id":6,"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg","first_name":"Tracey","email":"tracey.ramos@reqres.in"}],"page":1,"total_pages":2}
+2019-09-11 12:20:56,906 [main] INFO TestBase.TestBase - Actual value of per page is-->6
+2019-09-11 12:20:56,906 [main] INFO TestBase.TestBase - Expected value of per page is-->6
+2019-09-11 12:20:56,907 [main] INFO TestBase.TestBase - 6 perPageValue matched
+2019-09-11 12:20:56,907 [main] INFO TestBase.TestBase - Actual value of total is-->12
+2019-09-11 12:20:56,908 [main] INFO TestBase.TestBase - Expected value of total is-->12
+2019-09-11 12:20:56,908 [main] INFO TestBase.TestBase - 12 TotalValue matched
+2019-09-11 12:20:56,909 [main] INFO TestBase.TestBase - get the value from JSON ARRAY:
+2019-09-11 12:20:56,910 [main] INFO TestBase.TestBase - Actual lastName is-->Bluth
+2019-09-11 12:20:56,910 [main] INFO TestBase.TestBase - Expected lastName is-->Bluth
+2019-09-11 12:20:56,913 [main] INFO TestBase.TestBase - Bluth LastName matched
+2019-09-11 12:20:56,913 [main] INFO TestBase.TestBase - Actual id is-->1
+2019-09-11 12:20:56,914 [main] INFO TestBase.TestBase - Expected id is-->1
+2019-09-11 12:20:56,915 [main] INFO TestBase.TestBase - Bluth id matched
+2019-09-11 12:20:56,915 [main] INFO TestBase.TestBase - Actual avatar name is-->https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg
+2019-09-11 12:20:56,916 [main] INFO TestBase.TestBase - Expected avatar name is-->https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg
+2019-09-11 12:20:56,916 [main] INFO TestBase.TestBase - https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg avatar name matched
+2019-09-11 12:20:56,917 [main] INFO TestBase.TestBase - Actual firstName is-->George
+2019-09-11 12:20:56,917 [main] INFO TestBase.TestBase - Expected firstName is-->George
+2019-09-11 12:20:56,918 [main] INFO TestBase.TestBase - George firstName matched
+2019-09-11 12:20:56,919 [main] INFO TestBase.TestBase - Headers Array-->{Transfer-Encoding=chunked, Server=cloudflare, CF-RAY=5147b53e8fe970c0-SIN, Access-Control-Allow-Origin=*, Connection=keep-alive, Date=Wed, 11 Sep 2019 06:50:32 GMT, Via=1.1 vegur, CF-Cache-Status=HIT, Etag=W/"3fc-L9Y9qPKbIuBn8jgEBvFsXcYiYX0", Cache-Control=public, max-age=14400, Set-Cookie=__cfduid=dc0a5a9fa9ddb26211d45c9eea4bcbf391568184632; expires=Thu, 10-Sep-20 06:50:32 GMT; path=/; domain=.reqres.in; HttpOnly; Secure, Vary=Accept-Encoding, Expires=Wed, 11 Sep 2019 10:50:32 GMT, Age=3411, Content-Type=application/json; charset=utf-8, X-Powered-By=Express, Expect-CT=max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"}

@@ -33,7 +33,7 @@ public class BokenLinksTest extends TestBase{
 	public void brokenLinksTest() throws Exception {
 		
 		Screenshot.infoScreenshot(driver, "Home Page");
-		BorkenLinks.login();
+		//BorkenLinks.login();
 		System.out.println("hgdasuidyhjasn");
 		Thread.sleep(10000);
 		BorkenLinks.bokenLinks();	
@@ -44,7 +44,7 @@ public class BokenLinksTest extends TestBase{
 	
 	@AfterClass(alwaysRun = true)
 	public void endreport() throws IOException {
-		closeBrowser();
+		//closeBrowser();
 		
 	}
 	
