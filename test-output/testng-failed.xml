@@ -6,4 +6,16 @@
       <class name="webServicesTest.ExtentReportsTest"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="webServicesTest.ExtentReportsTest">
+        <methods>
+          <include name="Setup"/>
+          <include name="getresult"/>
+          <include name="testclose"/>
+          <include name="test2"/>
+        </methods>
+      </class> <!-- webServicesTest.ExtentReportsTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,12 +1,15 @@
 package webServicesTest;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -15,7 +18,10 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -52,34 +58,39 @@ public class ExtentReportsTest {
 			
 	}
 	
-	@Test(priority=0)
-	public void test1(){
-		ptest=extent.createTest("search option");
-		ctest=ptest.createNode("login1");
+	@Test(priority=1)
+	public void test1() throws IOException{
+		//ptest=extent.createTest("search option");
+		ctest=ptest.createNode("<center><b> ' login1' </b></center>");
+		ctest.log(Status.INFO, "step1");
+		//ctest.log(Status.INFO, "  jhaskduiw", MediaEntityBuilder.createScreenCaptureFromBase64String("screen.png").build());
+		ctest.log(Status.INFO, MarkupHelper.createLabel("label", ExtentColor.BLUE));
+		ctest.log(Status.INFO, "step2");
+		
+		ctest=ptest.createNode("===============login2============");
 		ctest.info("step1");
 		ctest.info("step2");
-		ctest=ptest.createNode("login2");
-		ctest.info("step1");
-		ctest.info("step2");
-		ctest=ptest.createNode("login3");
+		ctest=ptest.createNode("================login3============");
 		test=ctest.createNode(" with valid data");
 		test.info("step3");
 		test.info("Step4");
-		test=ctest.createNode("with invalid data");
+		test=ctest.createNode("============with invalid data=============");
 		test.info("step3");
 		test.info("Step4");
+		//driver.findElement(By.xpath("jahsuioa"));
 						
 						
 	}
-	@Test(priority=1)
+	@Test(priority=0)
 	public void test2(){
 		ptest=extent.createTest("login");
-		ctest=ptest.createNode("login with valid");
+		ctest=ptest.createNode("=================login with valid=============");
 		ctest.info("step1");
 		ctest.info("step2");
-		ctest=ptest.createNode("login with invalid");
+		ctest=ptest.createNode("===============login with invalid=============");
 		ctest.info("step1");
 		ctest.info("step2");
+		Assert.assertEquals(true, false);
 						
 	}
 	
